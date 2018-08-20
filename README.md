@@ -1,6 +1,18 @@
 # Modul152_Project
 This is a Project Repository for the Modul 152 
+Package: Python 3.7
+         Django
+         Django REST
+         Vue.js 2.12
+         Docker
+         
+
+
 # vue-django-webpack-boilerplate
+
+## HOW to Start
+cd music4you
+
 
 
 
