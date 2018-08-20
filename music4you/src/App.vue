@@ -43,6 +43,7 @@ export default {
 
   body {
     margin: 0;
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   }
 
   .el-header, .el-footer {
@@ -50,6 +51,7 @@ export default {
     color: #333;
     text-align: center;
     line-height: 60px;
+    padding: 0;
   }
   
   .el-aside {
@@ -80,6 +82,11 @@ export default {
   }
 .logo {
   width: 100px;
-  height: 100px
+  height: 100px;
 }
+.el-radio-group {
+  display: -webkit-flex;
+}
+
+
 </style>
