@@ -16,11 +16,13 @@
 
 <script>
 import Navbar from './components/Navbar.vue'
+import Sidebar from './components/Sidebar.vue'
 
 export default {
   name: 'app',
   components: {
-    'navbar': Navbar
+    'navbar': Navbar,
+    'sidebar': Sidebar
   }
 }
 </script>
