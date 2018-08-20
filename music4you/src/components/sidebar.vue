@@ -45,7 +45,11 @@
 <style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: auto;
-    min-height: 400px;
+    min-height: 8000%;
+}
+
+.el-aside {
+    line-height: 8000%
 }
 
 </style>

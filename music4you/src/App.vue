@@ -2,7 +2,7 @@
   <div id="app">
     <el-container>
       <el-aside width="auto">
-        <sidebar></sidebar>
+        <sidebar width></sidebar>
       </el-aside>
     <el-container>
       <el-header>
