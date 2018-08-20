@@ -40,6 +40,11 @@ export default {
 </script>
 
 <style>
+
+  body {
+    margin: 0;
+  }
+
   .el-header, .el-footer {
     background-color: #B3C0D1;
     color: #333;
