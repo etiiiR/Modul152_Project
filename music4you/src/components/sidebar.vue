@@ -34,11 +34,7 @@
         <el-menu-item index="5">
             <i class="el-icon-setting"></i>
         </el-menu-item>
-
-        <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-        <el-radio-button :label="false">expand</el-radio-button>
-        <el-radio-button :label="true">collapse</el-radio-button>
-    </el-radio-group>
+        <el-button  @click="toggle"  icon="el-icon-d-arrow-right"  type="primary"  round></el-button>
     </el-menu>
 </div>
 </template>
@@ -58,6 +54,10 @@ export default {
     }
   },
   methods: {
+    toggle () {
+      console.log('toggle')
+      this.isCollapse = !this.isCollapse
+    },
     handleOpen (key, keyPath) {
       console.log(key, keyPath)
     },
