@@ -1,13 +1,25 @@
 <template>
   <div id="app">
-    <navbar></navbar>
-    <img class="logo" src="./assets/logo.png">
-    <br>
-    <img class="logo" src="./assets/dj.png">
-    <router-view/>
-    <p>
-      Welcome to your Django - Vue.js app!
-    </p>
+    <el-container>
+      <el-aside width="200px">
+        <sidebar></sidebar>
+      </el-aside>
+    <el-container>
+      <el-header>
+        <navbar></navbar>
+      </el-header>
+      <el-main>
+        <img class="logo" src="./assets/logo.png">
+        <br>
+        <img class="logo" src="./assets/dj.png">
+        <router-view/>
+        <p>
+        Welcome to your Django - Vue.js app!
+        </p>
+      </el-main>
+      <el-footer>Footer</el-footer>
+    </el-container>
+    </el-container>
   </div>
 </template>
 
@@ -28,30 +40,39 @@ export default {
 </script>
 
 <style>
-html {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-#app {
-  color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
-  font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
-  text-align: center;
-}
-
-#app a {
-  color: #42b983;
-  text-decoration: none;
-}
-
+  .el-header, .el-footer {
+    background-color: #B3C0D1;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+  }
+  
+  .el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
+  }
+  
+  .el-main {
+    background-color: #E9EEF3;
+    color: #333;
+    text-align: center;
+    line-height: 160px;
+  }
+  
+  body > .el-container {
+    margin-bottom: 40px;
+  }
+  
+  .el-container:nth-child(5) .el-aside,
+  .el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+  }
+  
+  .el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+  }
 .logo {
   width: 100px;
   height: 100px
