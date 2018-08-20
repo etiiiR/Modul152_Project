@@ -36,8 +36,11 @@
         </el-menu-item>
         <el-menu-item index="6">
             <i class="el-icon-setting"></i>
+            <span slot="title">Navigator SIX</span>
         </el-menu-item>
-        <el-button  @click="toggle"  icon="el-icon-d-arrow-right"  type="primary"  round></el-button>
+        <el-menu-item index="6">
+             <el-button  @click="toggle"  icon="el-icon-d-arrow-right"  type="primary"  round></el-button>
+        </el-menu-item>
     </el-menu>
 </div>
 </template>
@@ -45,12 +48,9 @@
 <style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: auto;
-    min-height: 8000%;
+    min-height: 400px;
 }
 
-.el-aside {
-    line-height: 8000%
-}
 
 </style>
 
