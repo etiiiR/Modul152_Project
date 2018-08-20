@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <navbar></navbar>
     <img class="logo" src="./assets/logo.png">
     <br>
     <img class="logo" src="./assets/dj.png">
@@ -10,9 +11,17 @@
   </div>
 </template>
 
+
+
+
 <script>
+import Navbar from './components/Navbar.vue'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    'navbar' : Navbar
+  }
 }
 </script>
 
