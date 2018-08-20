@@ -1,37 +1,40 @@
 <template>
 <div>
     <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-        <el-submenu index="1">
+        <el-menu-item index="1">
+            <img class="el-logo" v-bind:src='img' height="30px">
+        </el-menu-item>
+        <el-submenu index="2">
             <template slot="title">
                 <i class="el-icon-location"></i>
                 <span slot="title">Navigator One</span>
             </template>
             <el-menu-item-group>
                 <span slot="title">Group One</span>
-                <el-menu-item index="1-1">item one</el-menu-item>
-                <el-menu-item index="1-2">item two</el-menu-item>
+                <el-menu-item index="2-1">item one</el-menu-item>
+                <el-menu-item index="2-2">item two</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group title="Group Two">
-                <el-menu-item index="1-3">item three</el-menu-item>
+                <el-menu-item index="2-3">item three</el-menu-item>
             </el-menu-item-group>
-            <el-submenu index="1-4">
+            <el-submenu index="2-4">
                 <span slot="title">item four</span>
-                <el-menu-item index="1-4-1">item one</el-menu-item>
+                <el-menu-item index="2-4-1">item one</el-menu-item>
             </el-submenu>
         </el-submenu>
-        <el-menu-item index="2">
+        <el-menu-item index="3">
             <i class="el-icon-menu"></i>
             <span slot="title">Navigator Two</span>
         </el-menu-item>
-        <el-menu-item index="3" disabled>
+        <el-menu-item index="4" disabled>
             <i class="el-icon-document"></i>
             <span slot="title">Navigator Three</span>
         </el-menu-item>
-        <el-menu-item index="4">
+        <el-menu-item index="5">
             <i class="el-icon-setting"></i>
             <span slot="title">Navigator Four</span>
         </el-menu-item>
-        <el-menu-item index="5">
+        <el-menu-item index="6">
             <i class="el-icon-setting"></i>
         </el-menu-item>
         <el-button  @click="toggle"  icon="el-icon-d-arrow-right"  type="primary"  round></el-button>
@@ -41,16 +44,18 @@
 
 <style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
+    width: auto;
     min-height: 400px;
 }
+
 </style>
 
 <script>
 export default {
   data () {
     return {
-      isCollapse: true
+      isCollapse: true,
+      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/ITunes_12.2_logo.png/600px-ITunes_12.2_logo.png'
     }
   },
   methods: {
