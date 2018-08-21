@@ -9,16 +9,12 @@
         <navbar></navbar>
       </el-header>
       <el-main>
-        <img class="logo" src="./assets/logo.png">
-        <br>
-        <img class="logo" src="./assets/dj.png">
         <router-view/>
         <p>
         Welcome to your Django - Vue.js app!
         </p>
       </el-main>
       <el-footer>
-        <footers></footers>
       </el-footer>
     </el-container>
     </el-container>
@@ -60,6 +56,9 @@ export default {
     top: 0px;
   }
   
+  .el-footer {
+    padding: 0 0px;
+  }
   
   .el-main {
     color: #333;

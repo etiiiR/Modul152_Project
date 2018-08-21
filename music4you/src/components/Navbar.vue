@@ -1,7 +1,6 @@
 <template>
 <div>
 <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-  <el-menu-item index="1">Processing Center</el-menu-item>
   <el-submenu index="2">
     <template slot="title">Workspace</template>
     <el-menu-item index="2-1">item one</el-menu-item>
@@ -14,8 +13,7 @@
       <el-menu-item index="2-4-3">item three</el-menu-item>
     </el-submenu>
   </el-submenu>
-  <el-menu-item index="3">Info</el-menu-item>
-  <el-menu-item index="4" disabled >Account</el-menu-item>
+  <el-menu-item index="4" >Account</el-menu-item>
   <el-autocomplete
   v-model="state4"
   :fetch-suggestions="querySearchAsync"

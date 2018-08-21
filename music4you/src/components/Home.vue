@@ -1,7 +1,7 @@
 <template>
-
+  
   <div class="hello">
-    <p>Test CSS Framework</p>
+    <h1>Welcome on Music4You</h1>
     <el-button type="primary" icon="el-icon-edit"></el-button>
     <el-button type="primary" icon="el-icon-share"></el-button>
     <el-button type="primary" icon="el-icon-delete"></el-button>
@@ -20,7 +20,7 @@ export default {
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
-      msg: 'Hello on the Modul152 Application'
+      msg: 'Enjoy'
     }
   }
 }
