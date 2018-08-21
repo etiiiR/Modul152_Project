@@ -62,7 +62,7 @@ export default {
   }
 
   .el-menu--horizontal {
-    position: fixed;
+    position: absolute;
     width: -webkit-fill-available;
 
   }
