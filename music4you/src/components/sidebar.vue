@@ -41,6 +41,7 @@
 
 .el-aside {
     background-color: white;
+    border-right: solid 1px #e6e6e6;
 }
 
 
@@ -57,6 +58,7 @@ export default {
   },
   methods: {
     toggle () {
+      console.log('toggle')
       this.isCollapse = !this.isCollapse
     },
     handleOpen (key, keyPath) {

@@ -16,8 +16,8 @@
       <el-menu-item index="2-4-3">item three</el-menu-item>
     </el-submenu>
   </el-submenu>
-  <el-menu-item index="3" disabled>Info</el-menu-item>
-  <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">Orders</a></el-menu-item>
+  <el-menu-item index="3">Info</el-menu-item>
+  <el-menu-item index="4" disabled >Account</el-menu-item>
 </el-menu>
 <div class="line"></div>
 </div>
