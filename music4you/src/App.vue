@@ -56,6 +56,8 @@ export default {
     text-align: center;
     line-height: 60px;
     padding: 0;
+    position: sticky;
+    top: 0px;
   }
   
   .el-aside {
@@ -63,6 +65,8 @@ export default {
     color: #333;
     text-align: center;
     line-height: 200px;
+     position: sticky;
+    top: 0px;
   }
   
   .el-main {
