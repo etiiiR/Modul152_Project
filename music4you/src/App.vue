@@ -95,6 +95,10 @@ export default {
  border: none;
 }
 
+.el-container>.is-vertical {
+  min-height: 100vh;
+}
+
 
 
 
