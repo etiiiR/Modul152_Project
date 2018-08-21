@@ -3,11 +3,12 @@
     <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
         <el-menu-item index="1">
             <img class="el-logo" v-bind:src='img' height="30px">
+            <span slot="title">Music4You</span>
         </el-menu-item>
         <el-submenu index="2">
             <template slot="title">
                 <i class="el-icon-location"></i>
-                <span slot="title">Navigator One</span>
+                <span slot="title">Nach Title</span>
             </template>
             <el-menu-item-group>
                 <span slot="title">Group One</span>
@@ -24,22 +25,22 @@
         </el-submenu>
         <el-menu-item index="3">
             <i class="el-icon-menu"></i>
-            <span slot="title">Navigator Two</span>
+            <span slot="title">Nach Künstler</span>
         </el-menu-item>
         <el-menu-item index="4" disabled>
             <i class="el-icon-document"></i>
-            <span slot="title">Navigator Three</span>
+            <span slot="title">Nach Genere</span>
         </el-menu-item>
         <el-menu-item index="5">
             <i class="el-icon-setting"></i>
-            <span slot="title">Navigator Four</span>
+            <span slot="title">Top Hits</span>
         </el-menu-item>
         <el-menu-item index="6">
             <i class="el-icon-setting"></i>
-            <span slot="title">Navigator SIX</span>
+            <span slot="title">Settings</span>
         </el-menu-item>
-        <el-menu-item index="6">
-            <i class="el-icon-d-arrow-right" @click="toggle"></i>
+        <el-menu-item index="6" @click="toggle" >
+            <i class="el-icon-d-arrow-right"></i>
         </el-menu-item>
     </el-menu>
 </div>
