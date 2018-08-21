@@ -2,7 +2,7 @@
   <div id="app">
     <el-container>
       <el-aside width="auto">
-        <sidebar width></sidebar>
+        <sidebar></sidebar>
       </el-aside>
     <el-container>
       <el-header>
@@ -17,7 +17,9 @@
         Welcome to your Django - Vue.js app!
         </p>
       </el-main>
-      <el-footer>Footer</el-footer>
+      <el-footer>
+        <footers></footers>
+      </el-footer>
     </el-container>
     </el-container>
   </div>
@@ -29,12 +31,14 @@
 <script>
 import Navbar from './components/Navbar.vue'
 import Sidebar from './components/Sidebar.vue'
+import Footers from './components/Footers.vue'
 
 export default {
   name: 'app',
   components: {
     'navbar': Navbar,
-    'sidebar': Sidebar
+    'sidebar': Sidebar,
+    'footers': Footers
   }
 }
 </script>
@@ -46,7 +50,7 @@ export default {
     font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   }
 
-  .el-header, .el-footer {
+  .el-header {
     background-color: #B3C0D1;
     color: #333;
     text-align: center;

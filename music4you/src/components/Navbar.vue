@@ -1,7 +1,5 @@
 <template>
 <div>
-<div class="line">
-</div>
 <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
   <el-menu-item index="1">Processing Center</el-menu-item>
   <el-submenu index="2">
@@ -19,7 +17,6 @@
   <el-menu-item index="3">Info</el-menu-item>
   <el-menu-item index="4" disabled >Account</el-menu-item>
 </el-menu>
-<div class="line"></div>
 </div>
 </template>
 
