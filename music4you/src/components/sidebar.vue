@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="sidebar_border">
     <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" :collapse-transition=true  @close="handleClose" :collapse="isCollapse">
         <el-menu-item index="1">
             <img class="el-logo" v-bind:src='img' height="30px">
@@ -46,6 +46,9 @@
     top: 0px;
 }
 
+.sidebar_border {
+    border-right: solid 1px #e6e6e6;
+}
 
 
 

@@ -62,7 +62,6 @@ export default {
   
   
   .el-main {
-    background-color: #E9EEF3;
     color: #333;
     text-align: center;
     line-height: 160px;
@@ -89,6 +88,40 @@ export default {
   height: 60px;
 }
 
+.el-menu-vertical-demo {
+  border: none;
+}
 
+.el-menu--collapse {
+ border: none;
+}
+
+
+
+
+
+/* Customize website's scrollbar like Mac OS
+Not supports in Firefox and IE */
+
+/* total width */
+body::-webkit-scrollbar {
+    background-color:#fff;
+    width:16px
+}
+
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track {
+    background-color:#fff
+}
+
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb {
+    background-color:#babac0;
+    border-radius:16px;
+    border:4px solid #fff
+}
+
+/* set button(top and bottom of the scrollbar) */
+body::-webkit-scrollbar-button {display:none}
 
 </style>
