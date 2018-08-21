@@ -1,12 +1,12 @@
 <template>
 <div>
-    <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+    <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" :collapse-transition=true  @close="handleClose" :collapse="isCollapse">
         <el-menu-item index="1">
             <img class="el-logo" v-bind:src='img' height="30px">
             <span slot="title">Music4You</span>
         </el-menu-item>
         <el-menu-item index="2">
-            <i class="el-icon-menu"></i>
+            <i class="el-icon-sort"></i>
             <span slot="title">Künstler</span>
         </el-menu-item>
         <el-menu-item index="3">
@@ -18,7 +18,7 @@
             <span slot="title">Generes</span>
         </el-menu-item>
         <el-menu-item index="5">
-            <i class="el-icon-setting"></i>
+            <i class="el-icon-upload2"></i>
             <span slot="title">Uploade</span>
         </el-menu-item>
         <el-menu-item index="6">
@@ -35,6 +35,7 @@
 <style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: auto;
+    min-width: 200px;
     min-height: auto;
 }
 
@@ -56,7 +57,6 @@ export default {
   },
   methods: {
     toggle () {
-      console.log('toggle')
       this.isCollapse = !this.isCollapse
     },
     handleOpen (key, keyPath) {
