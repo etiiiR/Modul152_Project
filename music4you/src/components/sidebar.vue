@@ -8,7 +8,7 @@
         <el-submenu index="2">
             <template slot="title">
                 <i class="el-icon-location"></i>
-                <span slot="title">Nach Title</span>
+                <span slot="title">alle Title</span>
             </template>
             <el-menu-item-group>
                 <span slot="title">Group One</span>
@@ -25,11 +25,11 @@
         </el-submenu>
         <el-menu-item index="3">
             <i class="el-icon-menu"></i>
-            <span slot="title">Nach Künstler</span>
+            <span slot="title">Künstler</span>
         </el-menu-item>
         <el-menu-item index="4" disabled>
             <i class="el-icon-document"></i>
-            <span slot="title">Nach Genere</span>
+            <span slot="title">Genere</span>
         </el-menu-item>
         <el-menu-item index="5">
             <i class="el-icon-setting"></i>
