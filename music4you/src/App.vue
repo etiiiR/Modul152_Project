@@ -84,9 +84,7 @@ export default {
   width: 100px;
   height: 100px;
 }
-.el-radio-group {
-  display: -webkit-flex;
-}
+
 
 
 

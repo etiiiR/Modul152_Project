@@ -38,9 +38,6 @@
 </script>
 
 <style scoped>
-.el-menu--horizontal>.el-submenu  {
-  float: right;
-}
 .el-menu-item {
   float: right;
 }
