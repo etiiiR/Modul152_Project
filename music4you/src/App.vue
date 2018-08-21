@@ -2,8 +2,8 @@
   <div id="app">
     <el-container>
       <el-aside width="auto">
-        <sidebar></sidebar>
       </el-aside>
+      <sidebar></sidebar>
     <el-container>
       <el-header>
         <navbar></navbar>
@@ -60,14 +60,6 @@ export default {
     top: 0px;
   }
   
-  .el-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
-     position: sticky;
-    top: 0px;
-  }
   
   .el-main {
     background-color: #E9EEF3;

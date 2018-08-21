@@ -32,17 +32,20 @@
 </div>
 </template>
 
-<style>
+<style scope>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: auto;
     min-width: 200px;
     min-height: auto;
+    position: sticky;
+    top: 0px;
 }
 
-.el-aside {
-    background-color: white;
-    border-right: solid 1px #e6e6e6;
+.el-menu--collapse {
+    position: sticky;
+    top: 0px;
 }
+
 
 
 
