@@ -47,7 +47,7 @@ export default {
   }
 
   .el-header, .el-footer {
-    background-color: white;
+    background-color: #B3C0D1;
     color: #333;
     text-align: center;
     line-height: 60px;
@@ -60,15 +60,9 @@ export default {
     text-align: center;
     line-height: 200px;
   }
-
-  .el-menu--horizontal {
-    position: absolute;
-    width: -webkit-fill-available;
-
-  }
   
   .el-main {
-    background-color: white;
+    background-color: #E9EEF3;
     color: #333;
     text-align: center;
     line-height: 160px;
