@@ -16,6 +16,12 @@
   </el-submenu>
   <el-menu-item index="3">Info</el-menu-item>
   <el-menu-item index="4" disabled >Account</el-menu-item>
+  <el-autocomplete
+  v-model="state4"
+  :fetch-suggestions="querySearchAsync"
+  placeholder="Please input"
+  @select="handleSelect"
+></el-autocomplete>
 </el-menu>
 </div>
 </template>
