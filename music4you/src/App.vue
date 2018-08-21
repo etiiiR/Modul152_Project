@@ -85,6 +85,9 @@ export default {
   height: 100px;
 }
 
+.el-menu-item {
+  height: 60px;
+}
 
 
 
