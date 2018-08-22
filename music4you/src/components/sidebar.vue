@@ -1,5 +1,5 @@
 <template>
-<div class="sidebar_border">
+<div class="sidebar_border" v-if="$mq !== 'mobile'" >
     <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" :collapse-transition=true  @close="handleClose" :collapse="isCollapse">
         <el-menu-item index="1">
             <img class="el-logo" v-bind:src='img' height="30px">
@@ -25,7 +25,7 @@
             <i class="el-icon-setting"></i>
             <span slot="title">Settings</span>
         </el-menu-item>
-        <el-menu-item index="6" @click="toggle" >
+        <el-menu-item v-if="$mq !== 'tablet'" index="6" @click="toggle" >
             <i class="el-icon-d-arrow-right"></i>
         </el-menu-item>
     </el-menu>

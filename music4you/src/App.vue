@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <el-container>
+    <div id="not" v-if="$mq === 'not'">
+      <h2>Screen Resolution to low</h2>
+      <h3>Your Device is not Supported im sorry please contact the:</h3>
+      <h5>etienne.roulet@gibmit.ch</h5>
+    </div>
+    <el-container v-if="$mq !== 'not'" >
       <el-aside width="auto">
       </el-aside>
       <sidebar></sidebar>
@@ -92,6 +97,21 @@ export default {
   min-height: 100vh;
 }
 
+#not{
+  background-color:color;
+  text-decoration-color: white;
+  padding-right:30px;
+}
+
+#not>.body{
+  background-color:color;
+  text-decoration-color: white;
+  padding-right:30px;
+}
+
+@media only screen and (max-width: 600px) {
+
+}
 
 
 
