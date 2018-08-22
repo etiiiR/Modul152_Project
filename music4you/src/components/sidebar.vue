@@ -1,6 +1,6 @@
 <template>
 <div class="sidebar_border" v-if="$mq !== 'mobile'" >
-    <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" :collapse-transition=true  @close="handleClose" :collapse="isCollapse">
+    <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" :collapse-transition=true  @close="handleOpen" :collapse="isCollapse">
         <el-menu-item index="1">
             <img class="el-logo" v-bind:src='img' height="30px">
             <span slot="title">Music4You</span>
@@ -34,8 +34,8 @@
 
 <style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: auto;
-    min-width: 200px;
+    width: 25vh;
+    min-width: 0px;
     min-height: auto;
     position: sticky;
     top: 0px;
@@ -65,7 +65,12 @@ export default {
   methods: {
     toggle () {
       console.log('toggle')
-      this.isCollapse = !this.isCollapse
+      if (this.isCollapse == true) {
+          this.isCollapse = false
+      }else {
+           this.isCollapse = true
+      }
+      
     },
     handleOpen (key, keyPath) {
       console.log(key, keyPath)
