@@ -103,16 +103,14 @@ export default {
   padding-right:30px;
 }
 
-#not>.body{
-  background-color:color;
-  text-decoration-color: white;
-  padding-right:30px;
-}
 
 @media only screen and (max-width: 600px) {
 
 }
 
+.el-input__inner {
+  border-radius: 20px;
+}
 
 
 
