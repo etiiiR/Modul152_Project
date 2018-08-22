@@ -21,7 +21,7 @@ RUN python3 format_index_html.py
 RUN python3 manage.py collectstatic --noinput
 
 # EXPOSE port to be used
-EXPOSE 8000
+EXPOSE 8001
 
 # Set command to run as soon as container is up
-CMD python3 manage.py runserver 0.0.0.0:8000
+CMD python3 manage.py runserver 0.0.0.0:8001

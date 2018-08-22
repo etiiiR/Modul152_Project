@@ -83,16 +83,9 @@ export default {
   height: 100px;
 }
 
-.el-menu-item {
-  height: 60px;
-}
 
 .el-menu-vertical-demo {
   border: none;
-}
-
-.el-menu--collapse {
- border: none;
 }
 
 .el-container>.is-vertical {

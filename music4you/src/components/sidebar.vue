@@ -32,7 +32,7 @@
 </div>
 </template>
 
-<style scope>
+<style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: auto;
     min-width: 200px;
