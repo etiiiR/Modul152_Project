@@ -64,12 +64,7 @@ export default {
   },
   methods: {
     toggle () {
-      console.log('toggle')
-      if (this.isCollapse == true) {
-          this.isCollapse = false
-      }else {
-           this.isCollapse = true
-      }
+      this.isCollapse = !this.isCollapse
       
     },
     handleOpen (key, keyPath) {
