@@ -139,14 +139,14 @@ body::-webkit-scrollbar {
 
 /* background of the scrollbar except button or resizer */
 body::-webkit-scrollbar-track {
-    background-color:rgb(238, 238, 238)
+    background-color:rgb(255, 255, 255)
 }
 
 /* scrollbar itself */
 body::-webkit-scrollbar-thumb {
     background-color:#79797e;
     border-radius:16px;
-    border:4px solid rgb(238, 238, 238)
+    border:4px solid rgb(255, 255, 255)
 }
 
 /* set button(top and bottom of the scrollbar) */
