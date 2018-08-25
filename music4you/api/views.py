@@ -1,12 +1,12 @@
 from rest_framework import generics
-from .serializers import BucketlistSerializer
-from .models import Bucketlist
+from .serializers import MusicSerializer
+from .models import Music
 # Create your views here.
 
 class CreateView(generics.ListCreateAPIView):
     """This class defines the create behavior of our rest api."""
-    queryset = Bucketlist.objects.all()
-    serializer_class = BucketlistSerializer
+    queryset = Music.objects.all()
+    serializer_class = MusicSerializer
 
     def perform_create(self, serializer):
         """Save the post data when creating a new bucketlist."""

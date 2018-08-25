@@ -140,3 +140,7 @@ NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=app',  # For multiple apps use '--cover-package=foo, bar'
 ]
+
+parent_dir = os.path.abspath(os.path.dirname(__file__) + '/..')
+MEDIA_ROOT = os.path.join(parent_dir, 'media/')
+MEDIA_URL = '/media/'

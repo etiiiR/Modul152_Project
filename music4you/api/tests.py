@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Bucketlist
+from .models import Music
 # Create your tests here.
 
 class ModelTestCase(TestCase):
@@ -7,12 +7,12 @@ class ModelTestCase(TestCase):
 
     def setUp(self):
         """Define the test client and other test variables."""
-        self.bucketlist_name = "Write world class code"
-        self.bucketlist = Bucketlist(name=self.bucketlist_name)
+        self.music_name = "Write world class code"
+        self.music = Music(name=self.music_name)
 
     def test_model_can_create_a_bucketlist(self):
         """Test the bucketlist model can create a bucketlist."""
-        old_count = Bucketlist.objects.count()
-        self.bucketlist.save()
-        new_count = Bucketlist.objects.count()
+        old_count = Music.objects.count()
+        self.music.save()
+        new_count = Music.objects.count()
         self.assertNotEqual(old_count, new_count)
