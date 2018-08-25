@@ -1,8 +1,9 @@
 <template>
   
   <div class="Künstler">
+      <h4>Our Top Acts</h4>
       <el-row>
-  <el-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">
+  <el-col :span="5" v-for="(o, index) in 6" :key="o" :offset="index > 0 ? 1 : 1">
     <el-card :body-style="{ padding: '0px' }">
       <img src="../../media/image/2018/08/25/Eric-cartman.png" class="image">
       <div style="padding: 14px;">

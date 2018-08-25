@@ -39,7 +39,7 @@ export default {
     'navbar': Navbar,
     'sidebar': Sidebar,
     'footers': Footers,
-    'musicplayer': MusicPlayer,
+    'musicplayer': MusicPlayer
   }
 }
 </script>
