@@ -66,6 +66,7 @@ export default {
 
   
   #footer {
+    border-top: solid 6px rgb(30, 160, 192);
     position: fixed;
     left: 0;
     bottom: 0;
@@ -138,14 +139,14 @@ body::-webkit-scrollbar {
 
 /* background of the scrollbar except button or resizer */
 body::-webkit-scrollbar-track {
-    background-color:#fff
+    background-color:rgb(238, 238, 238)
 }
 
 /* scrollbar itself */
 body::-webkit-scrollbar-thumb {
-    background-color:#babac0;
+    background-color:#79797e;
     border-radius:16px;
-    border:4px solid #fff
+    border:4px solid rgb(238, 238, 238)
 }
 
 /* set button(top and bottom of the scrollbar) */
