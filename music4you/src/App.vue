@@ -62,9 +62,17 @@ export default {
     top: 0px;
   }
 
+  .sidebar_border {
+    background-color:rgb(250, 250, 250);
+  }
+
+
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    background-color:rgb(250, 250, 250);
+  }
   
   #footer {
-    border-top: solid 6px rgb(30, 160, 192);
+    border-top: solid 2px #e6e6e6;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -103,6 +111,14 @@ export default {
 
 .el-menu-vertical-demo {
   border: none;
+}
+
+.el-menu--collapse {
+  background-color: rgb(250, 250, 250);
+}
+
+.el-menu--horizontal {
+  background-color: rgb(250, 250, 250);
 }
 
 .el-container>.is-vertical {

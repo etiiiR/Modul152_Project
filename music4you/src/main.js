@@ -14,7 +14,11 @@ Vue.config.productionTip = false
 Vue.use(APlayer, {
   defaultCover: 'https://github.com/u3u.png', // set the default cover
   productionTip: false, // disable console output
-  fixedoptional: true
+  fixedoptional: true,
+  listFolded: true,
+  listMaxHeight: 200,
+  theme: ' #ebd0c2',
+  autoplay: false
 })
 
 Vue.use(VueMq, {
