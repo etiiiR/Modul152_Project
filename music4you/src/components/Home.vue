@@ -30,6 +30,9 @@
     <h1>{{ msg }}</h1>
     <h1>{{ msg }}</h1>
     <h1>{{ msg }}</h1>
+    <router-link tag="li" to="/Kuenstler/">
+  <a>Helloosdkfslkdfklsdjklfj</a>
+</router-link>
     <div class="el-scrollbar__bar is-horizontal"><div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div></div>
   </div>
 </template>

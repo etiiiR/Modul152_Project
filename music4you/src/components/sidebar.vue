@@ -1,30 +1,49 @@
 <template>
 <div class="sidebar_border" v-if="$mq !== 'mobile'" >
     <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" :collapse-transition=true  @close="handleOpen" :collapse="isCollapse">
-        <el-menu-item id="el-logo" index="1">
+        
+        <router-link tag="none" to="/" >
+        <el-menu-item id="el-logo"  index="1">
             <img class="el-logo" v-bind:src='img' height="30px">
             <span slot="title">Music4You</span>
         </el-menu-item>
+        </router-link>
+
+        <router-link tag="none" to="/kuenstler/" >
         <el-menu-item index="2">
             <i class="el-icon-sort"></i>
             <span slot="title">Künstler</span>
         </el-menu-item>
+        </router-link>
+
+        <router-link tag="none" to="/albums/" >
         <el-menu-item index="3">
             <i class="el-icon-menu"></i>
             <span slot="title">Künstler</span>
         </el-menu-item>
-        <el-menu-item index="4" disabled>
+        </router-link>
+
+        <router-link tag="none" to="/generes/" >
+        <el-menu-item index="4">
             <i class="el-icon-document"></i>
             <span slot="title">Generes</span>
         </el-menu-item>
+        </router-link>
+
+        <router-link tag="none" to="/uploade/" >
         <el-menu-item index="5">
             <i class="el-icon-upload2"></i>
             <span slot="title">Uploade</span>
         </el-menu-item>
+        </router-link>
+
+        <router-link tag="none" to="/settings" >
         <el-menu-item index="6">
             <i class="el-icon-setting"></i>
             <span slot="title">Settings</span>
         </el-menu-item>
+        </router-link>
+
         <el-menu-item v-if="$mq !== 'tablet'" index="6" @click="toggle" >
             <i class="el-icon-d-arrow-right"></i>
         </el-menu-item>
@@ -33,6 +52,10 @@
 </template>
 
 <style>
+li a {
+    text-decoration: none;
+}
+
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 25vh;
     min-width: 0px;
