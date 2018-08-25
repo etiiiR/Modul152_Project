@@ -16,10 +16,10 @@
         </el-menu-item>
         </router-link>
 
-        <router-link tag="none" to="/albums/" >
+        <router-link tag="none" to="/yourSongs/" >
         <el-menu-item index="3">
             <i class="el-icon-menu"></i>
-            <span slot="title">Künstler</span>
+            <span slot="title">Deine Songs</span>
         </el-menu-item>
         </router-link>
 
