@@ -9,7 +9,8 @@ class Music(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
     upload = models.FileField(upload_to='./mp3/%Y/%m/%d/')
+    lyrics = models.FileField(upload_to='./lyrics/%Y/%m/%d/')
 
     def __str__(self):
         """Return a human readable representation of the model instance."""
-        return "Title:{} Genere:{} Image:{} Upload:{}".format(self.title, self.Genere, self.image, self.upload)
+        return "Title:{} Genere:{} Image:{} Upload:{} Lyrics:{}".format(self.title, self.Genere, self.image, self.upload, self.lyrics)

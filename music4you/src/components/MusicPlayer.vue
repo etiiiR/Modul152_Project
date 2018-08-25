@@ -10,11 +10,11 @@ export default {
   data () {
     return {
       audio: {
-        name: 'ヒビカセ',
-        artist: 'れをる',
-        url: 'http://pdacsgxq7.bkt.clouddn.com/mp3/hibikase.mp3',
-        cover: 'http://p1.music.126.net/cZPx3peGTuWEI_GaZB5CDg==/8892850045794893.jpg?param=300y300',
-        lrc: 'http://pdacsgxq7.bkt.clouddn.com/lrc/hibikase.lrc'
+        name: 'Iam the One',
+        artist: 'Justin Biber',
+        url: '../../media/mp3/2018/08/25/DJ_Khaled_-_Im_The_One_ft._Justin_Bieber_Quavo_Chance_the_Rapper_Lil_Wayne.mp3',
+        cover: '../../media/image/2018/08/25/dj-khaleds-im-the-one-music-video-features-justin-bieber-lil-wayne-chan_jBLNSlb.jpg',
+        lrc: '../../media/lyrics/2018/08/25/DJ_Khaled_-_Im_The_One_ft._Justin_Bieber_Quavo_Chance_the_Rapper_Lil_Wayn_DoGcdAl.lrc'
       }
     }
   }

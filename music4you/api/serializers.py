@@ -7,5 +7,5 @@ class MusicSerializer(serializers.ModelSerializer):
     class Meta:
         """Meta class to map serializer's fields with the model fields."""
         model = Music
-        fields = ('id', 'title', 'Genere', 'image', 'upload', 'date_created', 'date_modified')
+        fields = ('id', 'title', 'Genere', 'image', 'upload', 'lyrics', 'date_created', 'date_modified')
         read_only_fields = ('date_created', 'date_modified')
