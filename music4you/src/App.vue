@@ -19,10 +19,11 @@
         Welcome to your Django - Vue.js app!
         </p>
       </el-main>
-      <el-footer>
-      </el-footer>
     </el-container>
     </el-container>
+     <div id="footer">
+        <musicplayer></musicplayer>
+      </div>
   </div>
 </template>
 
@@ -33,13 +34,15 @@
 import Navbar from './components/Navbar.vue'
 import Sidebar from './components/Sidebar.vue'
 import Footers from './components/Footers.vue'
+import MusicPlayer from './components/MusicPlayer.vue'
 
 export default {
   name: 'app',
   components: {
     'navbar': Navbar,
     'sidebar': Sidebar,
-    'footers': Footers
+    'footers': Footers,
+    'musicplayer': MusicPlayer
   }
 }
 </script>
@@ -60,15 +63,25 @@ export default {
     position: sticky;
     top: 0px;
   }
+
   
-  .el-footer {
-    padding: 0 0px;
+  #footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
   }
   
   .el-main {
     color: #333;
     text-align: center;
     line-height: 160px;
+  }
+
+  .el-container {
+    padding-bottom: 70px;
   }
   
   body > .el-container {

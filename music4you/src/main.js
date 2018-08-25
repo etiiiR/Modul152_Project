@@ -6,9 +6,16 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueMq from 'vue-mq'
+import APlayer from '@moefe/vue-aplayer'
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false
+
+Vue.use(APlayer, {
+  defaultCover: 'https://github.com/u3u.png', // set the default cover
+  productionTip: false, // disable console output
+  fixedoptional: true
+})
 
 Vue.use(VueMq, {
   breakpoints: {

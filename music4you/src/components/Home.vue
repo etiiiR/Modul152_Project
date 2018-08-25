@@ -8,6 +8,28 @@
     <el-button type="primary" icon="el-icon-search">Search</el-button>
     <el-button type="primary">Upload<i class="el-icon-upload el-icon-right"></i></el-button>
     <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
     <div class="el-scrollbar__bar is-horizontal"><div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div></div>
   </div>
 </template>
