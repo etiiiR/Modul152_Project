@@ -15,9 +15,6 @@
       </el-header>
       <el-main>
         <router-view/>
-        <p>
-        Welcome to your Django - Vue.js app!
-        </p>
       </el-main>
     </el-container>
     </el-container>
