@@ -10,4 +10,6 @@ class CreateView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         """Save the post data when creating a new bucketlist."""
+        print(serializer.validated_data['upload'])
         serializer.save()
+        print(serializer.data['upload'].strip('http://localhost:8000/'))
