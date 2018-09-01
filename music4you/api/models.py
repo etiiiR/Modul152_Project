@@ -11,13 +11,8 @@ class Music(models.Model):
     image = models.ImageField(upload_to='./image/%Y/%m/%d/')
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
-    upload = models.FileField(upload_to='./mp3/%Y/%m/%d/test.mp3')
+    upload = models.FileField(upload_to='./mp3/320kbit/')
     lyrics = models.FileField(upload_to='./lyrics/%Y/%m/%d/')
-    # files                                                                         
-    src = "DJ_Khaled_-_Im_The_One_ft._Justin_Bieber_Quavo_Chance_the_Rapper_Lil_Wayn_DoGcdAl.mp3"
-    dst = "test.wav"
-
-    print("hello world")
 
     
 

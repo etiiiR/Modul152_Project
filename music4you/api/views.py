@@ -1,6 +1,7 @@
 from rest_framework import generics
 from .serializers import MusicSerializer
 from .models import Music
+from pydub import AudioSegment
 # Create your views here.
 
 class CreateView(generics.ListCreateAPIView):
@@ -13,3 +14,7 @@ class CreateView(generics.ListCreateAPIView):
         print(serializer.validated_data['upload'])
         serializer.save()
         print(serializer.data['upload'].strip('http://localhost:8000/'))
+        song_to_sample = serializer.data['upload'].strip('http://localhost:8000/')
+        path = "./mp3/320kbit/"
+        song = AudioSegment.from_mp3(path  + song_to_sample)
+        song.export("mashup.mp3", format="mp3", bitrate="192k")
