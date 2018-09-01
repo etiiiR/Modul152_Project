@@ -1,6 +1,8 @@
 FROM node:alpine
 MAINTAINER Stanley Ndagi "ndagis@gmail.com"
 RUN apk update && apk upgrade
+RUN apk add build-base python3-dev py-pip jpeg-dev zlib-dev
+ENV LIBRARY_PATH=/lib:/usr/lib
 
 WORKDIR /app
 
