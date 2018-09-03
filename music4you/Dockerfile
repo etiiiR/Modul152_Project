@@ -6,6 +6,8 @@ ENV LIBRARY_PATH=/lib:/usr/lib
 
 WORKDIR /app
 
+
+RUN apk add ffmpeg
 # Install python, pip and python packages
 RUN apk add python3 curl
 COPY requirements.txt requirements.txt
