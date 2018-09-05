@@ -7,6 +7,7 @@ import App from './App'
 import router from './router'
 import VueMq from 'vue-mq'
 import APlayer from '@moefe/vue-aplayer'
+import axios from './backend/vue-axios/'
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false
@@ -35,6 +36,7 @@ Vue.use(VueMq, {
 new Vue({
   el: '#app',
   router,
+  axios,
   template: '<App/>',
   components: { App }
 })

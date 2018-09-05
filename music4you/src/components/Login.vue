@@ -32,7 +32,24 @@
     },
     methods: {
       onSubmit () {
-        console.log('submit!')
+        alert(this.form.name, this.form.password, this.form.email)
+        console.log( "username:", this.form.name, "email:", this.form.email, "password:", this.form.password, )
+        this.$http.post('/rest-auth/login/', { username: this.form.name, email: this.form.email, password: this.form.password, })
+        .then(request => this.loginSuccessful(request))
+        .catch(() => this.loginFailed())
+      },
+      loginSuccessful (req) {
+        if (!req.data.token) {
+          this.loginFailed()
+          return
+        }
+        localStorage.token = req.data.token
+        this.error = false
+        this.$router.replace(this.$route.query.redirect || '/authors')
+      },
+      loginFailed () {
+        this.error = 'Login failed!'
+        delete localStorage.token
       }
     }
   }
