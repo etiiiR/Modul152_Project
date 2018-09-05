@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^$', index, name='home'),
-    url(r'^', include('api.urls'))
+    url(r'^', include('api.urls')),
+    url('rest-auth/', include('rest_auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

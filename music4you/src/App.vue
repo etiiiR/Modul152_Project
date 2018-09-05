@@ -32,6 +32,7 @@ import Navbar from './components/Navbar.vue'
 import Sidebar from './components/Sidebar.vue'
 import Footers from './components/Footers.vue'
 import MusicPlayer from './components/MusicPlayer.vue'
+import Login from './components/Login.vue'
 
 export default {
   name: 'app',
@@ -39,7 +40,8 @@ export default {
     'navbar': Navbar,
     'sidebar': Sidebar,
     'footers': Footers,
-    'musicplayer': MusicPlayer
+    'musicplayer': MusicPlayer,
+    'login': Login
   }
 }
 </script>

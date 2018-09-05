@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM ffmpeg:3.3-alpine
 MAINTAINER Stanley Ndagi "ndagis@gmail.com"
 RUN apk update && apk upgrade
 RUN apk add build-base python3-dev py-pip jpeg-dev zlib-dev

@@ -23,10 +23,10 @@
         </el-menu-item>
         </router-link>
 
-        <router-link tag="none" to="/generes/" >
+        <router-link tag="none" to="/login/" >
         <el-menu-item index="4">
             <i class="el-icon-document"></i>
-            <span slot="title">Generes</span>
+            <span slot="title">Login</span>
         </el-menu-item>
         </router-link>
 
