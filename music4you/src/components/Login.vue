@@ -32,23 +32,19 @@
     },
     methods: {
       onSubmit () {
-        this.$http.post('/rest-auth/login/', { username: this.form.name, email: this.form.email, password: this.form.password, })
+        this.$http.post('/rest-auth/login/', { username: this.form.name, email: this.form.email, password: this.form.password })
         .then(request => this.loginSuccessful(request))
         .catch(() => this.loginFailed())
       },
       loginSuccessful (req) {
-        if (!req.data.token) {
-          alert("loggin faild trow login sucessful")
-          this.loginFailed()
-          return
-        }
+        alert(req)
         localStorage.token = req.data.token
         this.error = false
-        alert("loginsucessfull")
+        alert('loginsucessfull')
         this.$router.replace(this.$route.query.redirect || '/authors')
       },
       loginFailed () {
-        alert("loggin failed")
+        alert('loggin failed')
         this.error = 'Login failed!'
         delete localStorage.token
       }
