@@ -13,9 +13,11 @@ class Music(models.Model):
     date_modified = models.DateTimeField(auto_now=True)
     upload = models.FileField(upload_to='./mp3/320/')
     lyrics = models.FileField(upload_to='./lyrics/%Y/%m/%d/')
+    upload_128 = models.FileField(upload_to='./mp3/128/')
+    upload_192 = models.FileField(upload_to='./mp3/192/')
 
     
 
     def __str__(self):
         """Return a human readable representation of the model instance."""
-        return "Title:{} Genere:{} Image:{} Upload:{} Lyrics:{}".format(self.title, self.Genere, self.image, self.upload, self.lyrics)
+        return "Title:{} Genere:{} Image:{} Upload:{} Lyrics:{} upload_128:{} upload_192:{}".format(self.title, self.Genere, self.image, self.upload, self.lyrics)
