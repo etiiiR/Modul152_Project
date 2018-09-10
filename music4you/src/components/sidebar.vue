@@ -57,6 +57,7 @@ li a {
     text-decoration: none;
 }
 
+
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 25vh;
     min-width: 0px;

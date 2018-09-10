@@ -11,7 +11,7 @@ class Music(models.Model):
     image = models.ImageField(upload_to='./image/%Y/%m/%d/')
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
-    upload = models.FileField(upload_to='./mp3/320kbit/')
+    upload = models.FileField(upload_to='./mp3/320/')
     lyrics = models.FileField(upload_to='./lyrics/%Y/%m/%d/')
 
     
