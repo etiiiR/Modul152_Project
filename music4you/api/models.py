@@ -13,8 +13,8 @@ class Music(models.Model):
     date_modified = models.DateTimeField(auto_now=True)
     upload = models.FileField(upload_to='./mp3/320/')
     lyrics = models.FileField(upload_to='./lyrics/%Y/%m/%d/')
-    upload_128 = models.FileField(upload_to='./mp3/128/')
-    upload_192 = models.FileField(upload_to='./mp3/192/')
+    upload_128 = models.FileField(upload_to='./mp3/128/', null=True)
+    upload_192 = models.FileField(upload_to='./mp3/192/', null=True)
 
     
 
