@@ -2,13 +2,21 @@ from rest_framework import generics
 from .serializers import MusicSerializer
 from .models import Music
 from pydub import AudioSegment
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import MusicSerializer
+from rest_framework import mixins
+from .models import *
 import logging
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 import os, sys
 # Create your views here.
 
 class CreateView(generics.ListCreateAPIView):
     """This class defines the create behavior of our rest api."""
     queryset = Music.objects.all()
+    print(queryset)
     serializer_class = MusicSerializer
 
     def perform_create(self, serializer):
@@ -27,3 +35,27 @@ class CreateView(generics.ListCreateAPIView):
         hello = song.export("/app/media/mp3/128/" + export_song_name + "mp3" , format="mp3", bitrate="128k")
         t = Music.objects.get(id=1)
         print(t)
+    
+
+class UserUpdateView(generics.RetrieveUpdateAPIView):
+    serializer_class = MusicSerializer
+    model = Music
+
+    def get_queryset(self):
+        queryset = self.model.objects.filter().only("upload_128")
+        return queryset
+
+    def patch(self, request, *args, **kwargs):
+        return self.partial_update(request, *args, **kwargs)
+
+
+class UsersListView(generics.ListAPIView):
+    queryset = Music.objects.all()
+    serializer_class = MusicSerializer
+
+class UserDeleteView(generics.ListAPIView, mixins.DestroyModelMixin):
+    queryset = Music.objects.all()
+    
+    def get(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
+

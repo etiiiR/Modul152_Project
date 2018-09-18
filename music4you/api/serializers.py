@@ -9,3 +9,4 @@ class MusicSerializer(serializers.ModelSerializer):
         model = Music
         fields = ('id', 'title', 'Genere', 'image', 'upload', 'lyrics', 'date_created', 'date_modified', 'upload_128', 'upload_192')
         read_only_fields = ('date_created', 'date_modified')
+        

@@ -8,11 +8,11 @@ class Music(models.Model):
     """This class represents the bucketlist model."""
     title = models.CharField(max_length=255, blank=False, unique=False)
     Genere = models.CharField(max_length=255, blank=False, unique=False)
-    image = models.ImageField(upload_to='./image/%Y/%m/%d/')
+    image = models.ImageField(upload_to='./image/%Y/%m/%d/', null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
-    upload = models.FileField(upload_to='./mp3/320/')
-    lyrics = models.FileField(upload_to='./lyrics/%Y/%m/%d/')
+    upload = models.FileField(upload_to='./mp3/320/', null=True)
+    lyrics = models.FileField(upload_to='./lyrics/%Y/%m/%d/', null=True)
     upload_128 = models.FileField(upload_to='./mp3/128/', null=True)
     upload_192 = models.FileField(upload_to='./mp3/192/', null=True)
 
@@ -20,4 +20,4 @@ class Music(models.Model):
 
     def __str__(self):
         """Return a human readable representation of the model instance."""
-        return "Title:{} Genere:{} Image:{} Upload:{} Lyrics:{} upload_128:{} upload_192:{}".format(self.title, self.Genere, self.image, self.upload, self.lyrics)
+        return "Title:{} Genere:{} Image:{} Upload:{} Lyrics:{} upload_128:{} upload_192:{}".format(self.title, self.Genere, self.image, self.upload, self.lyrics, self.upload_128, self.upload_192)
