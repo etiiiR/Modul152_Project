@@ -7,9 +7,14 @@ import App from './App'
 import router from './router'
 import VueMq from 'vue-mq'
 import APlayer from '@moefe/vue-aplayer'
-import axios from './backend/vue-axios/'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import jwtDecode from 'jwt-decode'
+import Vuex from 'vuex'
 
 Vue.use(ElementUI)
+Vue.use(Vuex)
+Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 
 Vue.use(APlayer, {
@@ -32,11 +37,73 @@ Vue.use(VueMq, {
   }
 })
 
+const store = new Vuex.Store({
+  state: {
+    jwt: localStorage.getItem('t'),
+    endpoints: {
+      obtainJWT: 'http://0.0.0.0:10000/auth/obtain_token',
+      refreshJWT: 'http://0.0.0.0:10000/auth/refresh_token'
+    }
+  },
+  mutations: {
+    updateToken (state, newToken) {
+      localStorage.setItem('t', newToken)
+      state.jwt = newToken
+    },
+    removeToken (state) {
+      localStorage.removeItem('t')
+      state.jwt = null
+    }
+  },
+  actions: {
+    obtainToken (username, password) {
+      const payload = {
+        username: username,
+        password: password
+      }
+      axios.post(this.state.endpoints.obtainJWT, payload)
+        .then((response) => {
+          this.commit('updateToken', response.data.token)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
+    refreshToken () {
+      const payload = {
+        token: this.state.jwt
+      }
+      axios.post(this.state.endpoints.refreshJWT, payload)
+        .then((response) => {
+          this.commit('updateToken', response.data.token)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
+    inspectToken () {
+      const token = this.state.jwt
+      if (token) {
+        const decoded = jwtDecode(token)
+        const exp = decoded.exp
+        const origIat = decoded.origIat
+        if (exp - (Date.now() / 1000) < 1800 && (Date.now() / 1000) - origIat < 628200) {
+          this.dispatch('refreshToken')
+        } else if (exp - (Date.now() / 1000) < 1800) {
+           // DO NOTHING, DO NOT REFRESH
+        } else {
+          // PROMPT USER TO RE-LOGIN, THIS ELSE CLAUSE COVERS THE CONDITION WHERE A TOKEN IS EXPIRED AS WELL
+        }
+      }
+    }
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  axios,
   template: '<App/>',
+  store,
   components: { App }
 })

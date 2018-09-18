@@ -37,14 +37,13 @@
         .catch(() => this.loginFailed())
       },
       loginSuccessful (req) {
-        alert(req)
         localStorage.token = req.data.token
         this.error = false
         alert('loginsucessfull')
         this.$router.replace(this.$route.query.redirect || '/authors')
       },
       loginFailed () {
-        alert('loggin failed')
+        alert('Loggin failed')
         this.error = 'Login failed!'
         delete localStorage.token
       }

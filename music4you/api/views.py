@@ -21,20 +21,20 @@ class CreateView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         """Save the post data when creating a new bucketlist."""
-        print(serializer.validated_data['upload'])
+        #print(serializer.validated_data['upload'])
         serializer.save()
-        print(serializer.data['upload'].strip('http://localhost:8001/'))
-        song_to_sample = serializer.data['upload'].strip('http://localhost:8001/')
-        song = AudioSegment.from_mp3(song_to_sample)
-        export_song_name = serializer.data['upload'].strip('http://localhost:8001/media/mp3/320/')
-        paths = "/app/media/mp3/192/"
-        os.mkdir(paths)
-        song.export("/app/media/mp3/192/" + export_song_name + "mp3" , format="mp3", bitrate="192k")
-        paths = "/app/media/mp3/128/"
-        os.mkdir(paths)
-        hello = song.export("/app/media/mp3/128/" + export_song_name + "mp3" , format="mp3", bitrate="128k")
-        t = Music.objects.get(id=1)
-        print(t)
+        #print(serializer.data['upload'].strip('http://localhost:8001/'))
+        #song_to_sample = serializer.data['upload'].strip('http://localhost:8001/')
+        #song = AudioSegment.from_mp3(song_to_sample)
+        #export_song_name = serializer.data['upload'].strip('http://localhost:8001/media/mp3/320/')
+        #paths = "/app/media/mp3/192/"
+        #os.mkdir(paths)
+        #song.export("/app/media/mp3/192/" + export_song_name + "mp3" , format="mp3", bitrate="192k")
+        #paths = "/app/media/mp3/128/"
+        #os.mkdir(paths)
+        #hello = song.export("/app/media/mp3/128/" + export_song_name + "mp3" , format="mp3", bitrate="128k")
+        #t = Music.objects.get(id=1)
+        #print(t)
     
 
 class UserUpdateView(generics.RetrieveUpdateAPIView):
@@ -42,7 +42,7 @@ class UserUpdateView(generics.RetrieveUpdateAPIView):
     model = Music
 
     def get_queryset(self):
-        queryset = self.model.objects.filter().only("upload_128")
+        queryset = self.model.objects.filter()
         return queryset
 
     def patch(self, request, *args, **kwargs):
@@ -58,4 +58,7 @@ class UserDeleteView(generics.ListAPIView, mixins.DestroyModelMixin):
     
     def get(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs)
-
+        
+class GEToneResult(generics.RetrieveAPIView):
+    queryset = Music.objects.all()
+    serializer_class = MusicSerializer
