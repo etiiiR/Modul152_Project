@@ -17,14 +17,13 @@ class CreateView(generics.ListCreateAPIView):
     """This class defines the create behavior of our rest api."""
     queryset = Music.objects.all()
     serializer_class = MusicSerializer
+    
 
     def perform_create(self, serializer):
         """Save the post data when creating a new bucketlist."""
         #print(serializer.validated_data['upload'])
-        music = serializer.fields(source='music.upload_128')
-        print(music)
         serializer.save()
-
+        print(serializer.data['id'])
         print(serializer.data['upload'].strip('http://localhost:8001/'))
         song_to_sample = serializer.data['upload'].strip('http://localhost:8001/')
         song = AudioSegment.from_mp3(song_to_sample)
@@ -35,10 +34,20 @@ class CreateView(generics.ListCreateAPIView):
         paths = "/app/media/mp3/128/"
         os.mkdir(paths)
         hello = song.export("/app/media/mp3/128/" + export_song_name + "mp3" , format="mp3", bitrate="128k")
-        t = Music.objects.get(id=1)
-        print(t)
-        upload_128 = make_upload_128(self.request.data['http://localhost:8001/media/mp3/128/' + export_song_name])
+        print(Music.objects.all)
+        number_of_id = serializer.data['id']
+        p = Music.objects.get(pk=number_of_id)
+        p.upload_128 = 'mp3/128/' + export_song_name + "mp3"
+        p.upload_192 = 'mp3/192/' + export_song_name + "mp3"
+        print(p)
+        p.save()
+        print(p)
         serializer.save()
+    
+    def get_song_name(self, serializer):
+        export_song_name = serializer.data['upload'].strip('http://localhost:8001/media/mp3/320/')
+        return export_song_name
+
 
 
     
@@ -68,3 +77,4 @@ class UserDeleteView(generics.ListAPIView, mixins.DestroyModelMixin):
 class GEToneResult(generics.RetrieveAPIView):
     queryset = Music.objects.all()
     serializer_class = MusicSerializer
+

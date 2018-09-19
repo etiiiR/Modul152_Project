@@ -50,7 +50,7 @@ export default {
     }
   },
   created () {
-    axios.get('http://localhost:8000/musics')
+    axios.get('http://localhost:8001/musics')
     .then((response) => {
       console.log(response.data)
       console.log(response.status)
