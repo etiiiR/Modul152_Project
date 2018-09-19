@@ -7,23 +7,7 @@
    <el-form-item label="genere">
     <el-input v-model="form.Genere"></el-input>
   </el-form-item>
-
-  <el-form-item label="title">
-      <label>Files
-        <input type="file" id="files" ref="files" multiple v-on:change="handleFilesUpload()"/>
-      </label>
-    </el-form-item>
-  <el-form-item label="Cover">
-      <input type="file" id="files" ref="files" multiple v-on:change="handleFilesUpload()"/>
-    </el-form-item>
-    <el-form-item label="Song_Mp3">
-      <input type="file" id="files" ref="files" multiple v-on:change="handleFilesUpload()"/>
-    </el-form-item>
-    <el-form-item label="Lyrics">
-      <input type="file" id="files" ref="files" multiple v-on:change="handleFilesUpload()"/>
-    </el-form-item>
-
-
+  
   <el-form-item>
     <el-button type="primary" @click="onSubmit">Create</el-button>
     <el-button>Cancel</el-button>
