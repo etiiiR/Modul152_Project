@@ -68,6 +68,10 @@ h1 {
   color: #42b983;
 }
 
+.el-main {
+      text-align: center;
+}
+
 
 
 </style>
