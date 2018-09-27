@@ -11,6 +11,7 @@ import logging
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 import os, sys
+import requests
 # Create your views here.
 
 class CreateView(generics.ListCreateAPIView):
@@ -22,17 +23,27 @@ class CreateView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         """Save the post data when creating a new bucketlist."""
         #print(serializer.validated_data['upload'])
-        serializer.save()
+        before_save = serializer.save()
+        print(before_save)
+        print(                             )
+        print(             )
+        print(             )
+        print(             )
+        print(             )
+        print(             )
+        print(             )
         print(serializer.data['id'])
         print(serializer.data['upload'].strip('http://localhost:8001/'))
         song_to_sample = serializer.data['upload'].strip('http://localhost:8001/')
         song = AudioSegment.from_mp3(song_to_sample)
         export_song_name = serializer.data['upload'].strip('http://localhost:8001/media/mp3/320/')
         paths = "/app/media/mp3/192/"
-        os.mkdir(paths)
+        if not os.path.exists(paths):
+            os.makedirs(paths)
         song.export("/app/media/mp3/192/" + export_song_name + "mp3" , format="mp3", bitrate="192k")
         paths = "/app/media/mp3/128/"
-        os.mkdir(paths)
+        if not os.path.exists(paths):
+            os.makedirs(paths)
         hello = song.export("/app/media/mp3/128/" + export_song_name + "mp3" , format="mp3", bitrate="128k")
         print(Music.objects.all)
         number_of_id = serializer.data['id']
@@ -42,10 +53,9 @@ class CreateView(generics.ListCreateAPIView):
         print(p)
         p.save()
         print(p)
-        serializer.save()
-        
-
-
+        headers = {"Content-Type" : "application/json"}
+        url = 'http://localhost:8001/number_of_id/delete/'
+        r = requests.delete(url, headers=headers)
 
     
 
