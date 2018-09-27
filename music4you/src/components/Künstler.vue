@@ -22,21 +22,21 @@ export default {
   data () {
     return {
       form: {
-          title: '',
-          Genere: '',
+        title: '',
+        Genere: ''
 
-        }
       }
-    },
-    methods: {
-      onSubmit() {
-        alert(this.form.title)
-        alert(this.form.Genere)
-        axios.post('http://localhost:8000/musics/create/', {
+    }
+  },
+  methods: {
+    onSubmit () {
+      alert(this.form.title)
+      alert(this.form.Genere)
+      axios.post('http://localhost:8001/musics/create/', {
         title: this.form.title,
         Genere: this.form.Genere
-        }).then(response => 200)
-    }  
+      }).then(response => 200)
+    }
   }
 }
 </script>
