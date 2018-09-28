@@ -9,6 +9,16 @@
   </el-form-item>
   
   <el-form-item>
+  <input type="file" @change="onFileChanged">
+  </el-form-item>
+  <el-form-item>
+  <input type="file" @change="onFileChanged1">
+  </el-form-item>
+  <el-form-item>
+  <input type="file" @change="onFileChanged2">
+  </el-form-item>
+
+  <el-form-item>
     <el-button type="primary" @click="onSubmit">Create</el-button>
     <el-button>Cancel</el-button>
   </el-form-item>
@@ -21,21 +31,43 @@ import axios from 'axios'
 export default {
   data () {
     return {
+      image: null,
+      upload: null,
+      lyrics: null,
       form: {
         title: '',
         Genere: ''
-
       }
     }
   },
   methods: {
+    onFileChanged (event) {
+      alert('changed')
+      this.image = event.target.files[0]
+    },
+    onFileChanged1 (event) {
+      alert('changed')
+      this.upload = event.target.files[0]
+    },
+    onFileChanged2 (event) {
+      alert('changed')
+      this.lyrics = event.target.files[0]
+    },
     onSubmit () {
+      const formData = new FormData()
+      formData.append('title', this.form.title)
+      formData.append('Genere', this.form.Genere)
+      formData.append('image', this.image)
+      formData.append('upload', this.upload)
+      formData.append('lyrics', this.lyrics)
       alert(this.form.title)
       alert(this.form.Genere)
-      axios.post('http://localhost:8001/musics/create/', {
-        title: this.form.title,
-        Genere: this.form.Genere
-      }).then(response => 200)
+      axios.post('http://localhost:8000/musics/create/',
+        formData,
+        { headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+        }).then(response => 200)
     }
   }
 }
