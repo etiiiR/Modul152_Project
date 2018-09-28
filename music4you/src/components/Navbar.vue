@@ -26,9 +26,12 @@
 
 
 <script>
+  import axios from 'axios'
   export default {
     data () {
       return {
+        data: [],
+        value: 'sdf',
         activeIndex: '1',
         activeIndex2: '1',
         links: [],
@@ -41,8 +44,23 @@
         console.log(key, keyPath)
       },
       loadAll () {
+        axios.get('http://localhost:8000/musics')
+        .then((response) => {
+          console.log(response.data)
+          this.data = response.data
+          for (var i = 0, len = this.data.lenght; i < len; i++) {
+            alert(i + '->' + this.data[key].title)
+            alert(i + '->' + this.data[key].upload)
+          }
+
+          console.log(response.status)
+          console.log(response.statusText)
+          console.log(response.headers)
+          console.log(response.config)
+          console.log(this.data)
+        })
         return [
-          { 'value': 'vue', 'link': 'https://github.com/vuejs/vue' },
+          { 'value': this.value, 'link': 'https://github.com/vuejs/vue' },
           { 'value': 'element', 'link': 'https://github.com/ElemeFE/element' },
           { 'value': 'cooking', 'link': 'https://github.com/ElemeFE/cooking' },
           { 'value': 'mint-ui', 'link': 'https://github.com/ElemeFE/mint-ui' },
