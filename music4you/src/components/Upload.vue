@@ -63,7 +63,7 @@ export default {
       formData.append('lyrics', this.lyrics)
       alert(this.form.title)
       alert(this.form.Genere)
-      axios.post('http://localhost:8000/musics/create/',
+      axios.post('http://localhost:8001/musics/create/',
         formData,
         { headers: {
           'Content-Type': 'multipart/form-data'
