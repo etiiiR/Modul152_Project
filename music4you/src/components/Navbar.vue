@@ -49,8 +49,6 @@
           console.log(response.data)
           this.data = response.data
           for (var i = 0, len = this.data.lenght; i < len; i++) {
-            alert(i + '->' + this.data[key].title)
-            alert(i + '->' + this.data[key].upload)
           }
 
           console.log(response.status)

@@ -9,7 +9,6 @@ import VueMq from 'vue-mq'
 import APlayer from '@moefe/vue-aplayer'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import jwtDecode from 'jwt-decode'
 import Vuex from 'vuex'
 
 Vue.use(ElementUI)
@@ -39,65 +38,46 @@ Vue.use(VueMq, {
 
 const store = new Vuex.Store({
   state: {
-    jwt: localStorage.getItem('t'),
-    endpoints: {
-      obtainJWT: 'http://0.0.0.0:10000/auth/obtain_token',
-      refreshJWT: 'http://0.0.0.0:10000/auth/refresh_token'
-    }
+    name: '',
+    artist: '',
+    url: '',
+    cover: '',
+    lrc: '',
+    audio: [
+      {
+        name: 'Iam the NOONE',
+        artist: 'Justin XXX',
+        url: '../../media/mp3/2018/08/25/DJ_Khaled_-_Im_The_One_ft._Justin_Bieber_Quavo_Chance_the_Rapper_Lil_Wayne.mp3',
+        cover: '../../media/image/2018/08/25/dj-khaleds-im-the-one-music-video-features-justin-bieber-lil-wayne-chan_jBLNSlb.jpg',
+        lrc: '../../media/lyrics/2018/08/25/DJ-Khaled-Im-the-One-ft.-Justin-Bieber-Quavo-Chance-the-Rapper-Lil-Wayne.lrc'
+      }
+    ]
   },
   mutations: {
-    updateToken (state, newToken) {
-      localStorage.setItem('t', newToken)
-      state.jwt = newToken
-    },
-    removeToken (state) {
-      localStorage.removeItem('t')
-      state.jwt = null
+    addSongtoPlaylist (state) {
+      let b = {
+        name: this.state.name,
+        artist: this.state.artist,
+        url: this.state.url,
+        cover: this.state.cover,
+        lrc: this.state.lrc
+      }
+      this.state.audio.push(b)
+      console.log(this.state.audio)
     }
   },
-  actions: {
-    obtainToken (username, password) {
-      const payload = {
-        username: username,
-        password: password
-      }
-      axios.post(this.state.endpoints.obtainJWT, payload)
-        .then((response) => {
-          this.commit('updateToken', response.data.token)
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-    },
-    refreshToken () {
-      const payload = {
-        token: this.state.jwt
-      }
-      axios.post(this.state.endpoints.refreshJWT, payload)
-        .then((response) => {
-          this.commit('updateToken', response.data.token)
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-    },
-    inspectToken () {
-      const token = this.state.jwt
-      if (token) {
-        const decoded = jwtDecode(token)
-        const exp = decoded.exp
-        const origIat = decoded.origIat
-        if (exp - (Date.now() / 1000) < 1800 && (Date.now() / 1000) - origIat < 628200) {
-          this.dispatch('refreshToken')
-        } else if (exp - (Date.now() / 1000) < 1800) {
-           // DO NOTHING, DO NOT REFRESH
-        } else {
-          // PROMPT USER TO RE-LOGIN, THIS ELSE CLAUSE COVERS THE CONDITION WHERE A TOKEN IS EXPIRED AS WELL
-        }
-      }
+  computed: {
+    musics () {
+      return this.$store.state.audio
     }
   }
 })
+
+store.commit('addSongtoPlaylist')
+
+store.commit('addSongtoPlaylist')
+
+store.commit('addSongtoPlaylist')
 
 /* eslint-disable no-new */
 new Vue({

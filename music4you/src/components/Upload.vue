@@ -68,7 +68,7 @@ export default {
         { headers: {
           'Content-Type': 'multipart/form-data'
         }
-        }).then(response => 200)
+        }).then(this.image = null, this.upload = null, this.lyrics = null, this.form.title = null, this.form.Genere = null, this.$router.push({ path: 'created' }))
     }
   }
 }
