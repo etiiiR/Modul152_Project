@@ -45,7 +45,21 @@ const store = new Vuex.Store({
     lrc: '',
     audio: [
       {
-        name: 'Iam the NOONE',
+        name: 'Test in main.js',
+        artist: 'Justin XXX',
+        url: '../../media/mp3/2018/08/25/DJ_Khaled_-_Im_The_One_ft._Justin_Bieber_Quavo_Chance_the_Rapper_Lil_Wayne.mp3',
+        cover: '../../media/image/2018/08/25/dj-khaleds-im-the-one-music-video-features-justin-bieber-lil-wayne-chan_jBLNSlb.jpg',
+        lrc: '../../media/lyrics/2018/08/25/DJ-Khaled-Im-the-One-ft.-Justin-Bieber-Quavo-Chance-the-Rapper-Lil-Wayne.lrc'
+      },
+      {
+        name: 'Test in main.js',
+        artist: 'Justin XXX',
+        url: '../../media/mp3/2018/08/25/DJ_Khaled_-_Im_The_One_ft._Justin_Bieber_Quavo_Chance_the_Rapper_Lil_Wayne.mp3',
+        cover: '../../media/image/2018/08/25/dj-khaleds-im-the-one-music-video-features-justin-bieber-lil-wayne-chan_jBLNSlb.jpg',
+        lrc: '../../media/lyrics/2018/08/25/DJ-Khaled-Im-the-One-ft.-Justin-Bieber-Quavo-Chance-the-Rapper-Lil-Wayne.lrc'
+      },
+      {
+        name: 'Test in main.js',
         artist: 'Justin XXX',
         url: '../../media/mp3/2018/08/25/DJ_Khaled_-_Im_The_One_ft._Justin_Bieber_Quavo_Chance_the_Rapper_Lil_Wayne.mp3',
         cover: '../../media/image/2018/08/25/dj-khaleds-im-the-one-music-video-features-justin-bieber-lil-wayne-chan_jBLNSlb.jpg',
@@ -63,7 +77,6 @@ const store = new Vuex.Store({
         lrc: this.state.lrc
       }
       this.state.audio.push(b)
-      console.log(this.state.audio)
     }
   },
   computed: {
@@ -72,13 +85,6 @@ const store = new Vuex.Store({
     }
   }
 })
-
-store.commit('addSongtoPlaylist')
-
-store.commit('addSongtoPlaylist')
-
-store.commit('addSongtoPlaylist')
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

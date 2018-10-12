@@ -9,26 +9,18 @@
 export default {
   data () {
     return {
-      audio: [
-        {
-          name: 'hello',
-          artist: 'Justin Biber',
-          url: '../../media/mp3/320/DJ_Khaled_-_Im_The_One_ft._Justin_Bieber_Quavo_Chance_the_Rapper_Lil_Wayne.mp3',
-          cover: '../../media/image/2018/08/25/dj-khaleds-im-the-one-music-video-features-justin-bieber-lil-wayne-chan_jBLNSlb.jpg',
-          lrc: '../../media/lyrics/2018/08/25/DJ-Khaled-Im-the-One-ft.-Justin-Bieber-Quavo-Chance-the-Rapper-Lil-Wayne.lrc',
-          theme: this.randomColor()
-        },
-        this.$store.state.audio[0],
-        this.$store.state.audio[1],
-        this.$store.state.audio[2],
-        this.$store.state.audio[3],
-        this.$store.state.audio[4]
-      ]
+      audio: this.$store.state.audio
     }
   },
   methods: {
     randomColor () {
       return `#${((Math.random() * 0xffffff) << 0).toString(16)}`
+    },
+    addmusic () {
+      for (let i = 0; i < this.$store.state.audio.length; i++) {
+        console.log(i)
+        alert(i)
+      }
     }
   }
 }

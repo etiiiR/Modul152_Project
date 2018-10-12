@@ -44,18 +44,11 @@
         console.log(key, keyPath)
       },
       loadAll () {
-        axios.get('http://localhost:8000/musics')
+        axios.get('http://localhost:8001/musics')
         .then((response) => {
-          console.log(response.data)
           this.data = response.data
           for (var i = 0, len = this.data.lenght; i < len; i++) {
           }
-
-          console.log(response.status)
-          console.log(response.statusText)
-          console.log(response.headers)
-          console.log(response.config)
-          console.log(this.data)
         })
         return [
           { 'value': this.value, 'link': 'https://github.com/vuejs/vue' },

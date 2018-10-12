@@ -1,15 +1,15 @@
 <template>
     <div>
         <el-row>
-  <el-col :span="5" v-for="(o, index) in 8" :key="o" :offset="index > 0 ? 1 : 1">
+  <el-col :span="5" v-for="item in data" :key="item" :offset="index > 0 ? 1 : 1">
     <el-card :body-style="{ padding: '0px' }">
-      <img src="../../media/image/2018/08/25/dj-khaleds-im-the-one-music-video-features-justin-bieber-lil-wayne-chan_jBLNSlb.jpg" class="image">
+      <img v-bind:src="item.image" class="image">
       <div style="padding: 14px;">
-        <span>{{ name }}</span>
+        <span>{{ item.title }}</span>
         <div class="bottom clearfix">
-          <time class="time" style="float: left">{{ currentDate }}</time>
-          <p style="font-size: 1px">URL</p>
-          <el-button @click="addPlaylist(o)" v-bind="url='mellos'" style="float: right" round>Add to Playlist</el-button>
+          <time class="time" style="float: left">{{ item.date_created }}</time>
+          <p style="font-size: 2px">URL</p>
+          <el-button @click="addPlaylist(item.id, item.title, item.Genere, item.image, item.upload, item.lyrics, item.upload_128, item.upload_192)" v-bind="url='mellos'" style="float: right" round>Add to Playlist</el-button>
         </div>
       </div>
     </el-card>
@@ -59,6 +59,7 @@
 
 <script>
 import axios from 'axios'
+
 export default {
   data () {
     return {
@@ -66,6 +67,7 @@ export default {
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
+      data: [],
       name: '',
       url: 'hello',
       msg: 'Enjoy',
@@ -73,18 +75,21 @@ export default {
     }
   },
   methods: {
-    addPlaylist (key) {
+    addPlaylist (key, title, genere, image, upload, lyrcis, upload128, upload192) {
       alert(key)
+      this.$store.state.name = title
+      this.$store.state.artist = genere
+      this.$store.state.url = upload
+      this.$store.state.cover = image
+      this.$store.state.lrc = lyrcis
+      this.$store.commit('addSongtoPlaylist')
+      console.log(this.$store.state.audio)
     }
   },
   created () {
     axios.get('http://localhost:8001/musics')
     .then((response) => {
-      console.log(response.data)
-      console.log(response.status)
-      console.log(response.statusText)
-      console.log(response.headers)
-      console.log(response.config)
+      this.data = response.data
     })
   }
 }
