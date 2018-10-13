@@ -66,6 +66,13 @@
       },
       handleSelect (item) {
         console.log(item)
+        this.$store.state.name = item.title
+        this.$store.state.artist = item.Genere
+        this.$store.state.url = item.upload
+        this.$store.state.cover = item.image
+        this.$store.state.lrc = item.lyrcis
+        this.$store.commit('addSongtoPlaylist')
+        console.log(this.$store.state.audio)
       }
     },
     beforeMount () {
@@ -79,7 +86,7 @@
             alert('in foreach')
             console.log(element)
             let b = {
-              'value': element.title, 'link': element.id
+              'value': element.title, 'link': element.id, 'id': element.id, 'title': element.title, 'Genere': element.Genere, 'image': element.image, 'lyrcis': element.lyrcis, 'upload': element.upload, 'upload128': element.upload128, 'upload192': element.upload192
             }
             console.log(b)
             searchvalues.push(b)
@@ -92,6 +99,15 @@
     mounted () {
       alert('created')
       this.links = this.loadAll()
+    },
+    addPlaylist (key, title, genere, image, upload, lyrcis, upload128, upload192) {
+      this.$store.state.name = title
+      this.$store.state.artist = genere
+      this.$store.state.url = upload
+      this.$store.state.cover = image
+      this.$store.state.lrc = lyrcis
+      this.$store.commit('addSongtoPlaylist')
+      console.log(this.$store.state.audio)
     }
   }
 </script>
