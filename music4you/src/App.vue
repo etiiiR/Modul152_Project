@@ -67,7 +67,7 @@ export default {
   }
 
   .el-header {
-    z-index: 10000;
+    z-index: 1999;
     background-color: #B3C0D1;
     color: #333;
     text-align: center;

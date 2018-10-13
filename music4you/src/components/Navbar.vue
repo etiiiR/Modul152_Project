@@ -40,14 +40,10 @@
       }
     },
     methods: {
-      getData () {
-        alert('getData')
-      },
       handleSelects (key, keyPath) {
         console.log(key, keyPath)
       },
       loadAll () {
-        alert('second')
         return this.searchvalues
       },
       querySearchAsync (queryString, cb) {
@@ -76,14 +72,12 @@
       }
     },
     beforeMount () {
-      alert('superfirst beforemount')
       axios.get('http://localhost:8001/musics')
         .then((response) => {
           this.datama = response.data
           console.log(this.datama)
           let searchvalues = []
           this.datama.forEach(function (element) {
-            alert('in foreach')
             console.log(element)
             let b = {
               'value': element.title, 'link': element.id, 'id': element.id, 'title': element.title, 'Genere': element.Genere, 'image': element.image, 'lyrcis': element.lyrcis, 'upload': element.upload, 'upload128': element.upload128, 'upload192': element.upload192
@@ -97,7 +91,6 @@
         })
     },
     mounted () {
-      alert('created')
       this.links = this.loadAll()
     },
     addPlaylist (key, title, genere, image, upload, lyrcis, upload128, upload192) {
