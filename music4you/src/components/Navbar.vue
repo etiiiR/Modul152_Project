@@ -30,35 +30,25 @@
   export default {
     data () {
       return {
-        data: [],
-        value: 'sdf',
+        datama: [],
+        searchvalues: [],
         activeIndex: '1',
         activeIndex2: '1',
         links: [],
         state4: '',
-        timeout: null
+        timeout: 5
       }
     },
     methods: {
+      getData () {
+        alert('getData')
+      },
       handleSelects (key, keyPath) {
         console.log(key, keyPath)
       },
       loadAll () {
-        axios.get('http://localhost:8001/musics')
-        .then((response) => {
-          this.data = response.data
-          for (var i = 0, len = this.data.lenght; i < len; i++) {
-          }
-        })
-        return [
-          { 'value': this.value, 'link': 'https://github.com/vuejs/vue' },
-          { 'value': 'element', 'link': 'https://github.com/ElemeFE/element' },
-          { 'value': 'cooking', 'link': 'https://github.com/ElemeFE/cooking' },
-          { 'value': 'mint-ui', 'link': 'https://github.com/ElemeFE/mint-ui' },
-          { 'value': 'vuex', 'link': 'https://github.com/vuejs/vuex' },
-          { 'value': 'vue-router', 'link': 'https://github.com/vuejs/vue-router' },
-          { 'value': 'babel', 'link': 'https://github.com/babel/babel' }
-        ]
+        alert('second')
+        return this.searchvalues
       },
       querySearchAsync (queryString, cb) {
         var links = this.links
@@ -78,11 +68,35 @@
         console.log(item)
       }
     },
+    beforeMount () {
+      alert('superfirst beforemount')
+      axios.get('http://localhost:8001/musics')
+        .then((response) => {
+          this.datama = response.data
+          console.log(this.datama)
+          let searchvalues = []
+          this.datama.forEach(function (element) {
+            alert('in foreach')
+            console.log(element)
+            let b = {
+              'value': element.title, 'link': element.id
+            }
+            console.log(b)
+            searchvalues.push(b)
+          })
+          this.searchvalues = searchvalues
+          console.log(this.searchvalues)
+          this.links = this.searchvalues
+        })
+    },
     mounted () {
+      alert('created')
       this.links = this.loadAll()
     }
   }
 </script>
+
+
 
 <style scoped>
 .el-menu-item {

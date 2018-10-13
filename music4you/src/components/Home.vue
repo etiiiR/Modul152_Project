@@ -38,7 +38,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   data () {
     return {
@@ -48,16 +47,6 @@ export default {
       // its initial state.
       msg: 'Enjoy'
     }
-  },
-  created () {
-    axios.get('http://localhost:8001/musics')
-    .then((response) => {
-      console.log(response.data)
-      console.log(response.status)
-      console.log(response.statusText)
-      console.log(response.headers)
-      console.log(response.config)
-    })
   }
 }
 </script>

@@ -76,7 +76,6 @@ export default {
   },
   methods: {
     addPlaylist (key, title, genere, image, upload, lyrcis, upload128, upload192) {
-      alert(key)
       this.$store.state.name = title
       this.$store.state.artist = genere
       this.$store.state.url = upload
@@ -91,6 +90,9 @@ export default {
     .then((response) => {
       this.data = response.data
     })
+  },
+  let () {
+    alert('oh hiii')
   }
 }
 </script>

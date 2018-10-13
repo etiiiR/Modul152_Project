@@ -38,6 +38,7 @@ Vue.use(VueMq, {
 
 const store = new Vuex.Store({
   state: {
+    all: [],
     name: '',
     artist: '',
     url: '',
