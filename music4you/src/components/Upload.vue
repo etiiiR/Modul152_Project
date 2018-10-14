@@ -43,15 +43,12 @@ export default {
   },
   methods: {
     onFileChanged (event) {
-      alert('changed')
       this.image = event.target.files[0]
     },
     onFileChanged1 (event) {
-      alert('changed')
       this.upload = event.target.files[0]
     },
     onFileChanged2 (event) {
-      alert('changed')
       this.lyrics = event.target.files[0]
     },
     onSubmit () {
@@ -61,8 +58,6 @@ export default {
       formData.append('image', this.image)
       formData.append('upload', this.upload)
       formData.append('lyrics', this.lyrics)
-      alert(this.form.title)
-      alert(this.form.Genere)
       axios.post('http://localhost:8001/musics/create/',
         formData,
         { headers: {
