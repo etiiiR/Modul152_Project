@@ -1,6 +1,6 @@
 <template>
 <div class="form_song">
-  <el-form ref="form" :model="form" label-width="120px">
+  <el-form ref="form" :model="form">
      <el-form-item label="title">
     <el-input v-model="form.title"></el-input>
   </el-form-item>
@@ -97,5 +97,30 @@ export default {
 .el-main {
   text-align: left;
   line-height: 2;
+}
+
+@media only screen and (max-width: 600px) {
+    .form_song {
+      max-width: 3000px;
+  padding-top: 40%;
+  padding-left: 0%;
+  padding-right: 0%;
+    }
+  
+.el-form-item {
+  margin-left: 0px;
+  
+}
+
+.el-form-item__label {
+  width: 0;
+}
+
+
+  .el-main {
+    float: left;
+    text-align: left;
+    line-height: 0;
+}
 }
 </style>

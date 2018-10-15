@@ -20,6 +20,8 @@
   </div>
 
   <div id="songsyour" v-if="$mq === 'mobile'">
+  <p></p>
+  <p></p>
   <el-row>
   <el-col :span="10" v-for="item in data" :key="item" :offset="index > 0 ? 1 : 1">
     <el-card :body-style="{ padding: '0px' }">
@@ -81,7 +83,7 @@
 
 <script>
 import axios from 'axios'
-
+/* eslint-disable */
 export default {
   data () {
     return {
