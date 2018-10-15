@@ -1,6 +1,7 @@
 <template>
-    <div>
-        <el-row>
+  <div>
+  <div id="songsyour" v-if="$mq !== 'mobile'">
+  <el-row>
   <el-col :span="5" v-for="item in data" :key="item" :offset="index > 0 ? 1 : 1">
     <el-card :body-style="{ padding: '0px' }">
       <img v-bind:src="item.image" class="image">
@@ -16,7 +17,28 @@
     <p></p>
   </el-col>
 </el-row>
-    </div>
+  </div>
+
+  <div id="songsyour" v-if="$mq === 'mobile'">
+  <el-row>
+  <el-col :span="10" v-for="item in data" :key="item" :offset="index > 0 ? 1 : 1">
+    <el-card :body-style="{ padding: '0px' }">
+      <img v-bind:src="item.image" class="image">
+      <div style="padding: 14px;">
+        <span>{{ item.title }}</span>
+        <div class="bottom clearfix">
+          <time class="time" style="float: left">{{ item.date_created }}</time>
+          <p style="font-size: 2px">URL</p>
+          <el-button @click="addPlaylist(item.id, item.title, item.Genere, item.image, item.upload, item.lyrics, item.upload_128, item.upload_192)" v-bind="url='mellos'" style="float: right" round>Add to Playlist</el-button>
+        </div>
+      </div>
+    </el-card>
+    <p></p>
+  </el-col>
+</el-row>
+  </div>
+
+</div>
 </template>
 
 
