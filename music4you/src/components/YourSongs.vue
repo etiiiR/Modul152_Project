@@ -76,13 +76,21 @@ export default {
   },
   methods: {
     addPlaylist (key, title, genere, image, upload, lyrcis, upload128, upload192) {
+      alert(this.$store.state.qualityoption)
       this.$store.state.name = title
       this.$store.state.artist = genere
-      this.$store.state.url = upload
+      if (this.$store.state.qualityoption == 0) {
+        this.$store.state.url = upload
+      } else if (this.$store.state.qualityoption == 1) {
+        this.$store.state.url = upload192
+      } else if (this.$store.state.qualityoption == 2) {
+        this.$store.state.url = upload128
+      } else {
+        console.log('audio quality konnte nicht geladen werden')
+      }
       this.$store.state.cover = image
       this.$store.state.lrc = lyrcis
       this.$store.commit('addSongtoPlaylist')
-      console.log(this.$store.state.audio)
     }
   },
   created () {
@@ -90,9 +98,6 @@ export default {
     .then((response) => {
       this.data = response.data
     })
-  },
-  let () {
-    alert('oh hiii')
   }
 }
 </script>

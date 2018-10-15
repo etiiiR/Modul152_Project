@@ -44,7 +44,8 @@ const store = new Vuex.Store({
     url: '',
     cover: '',
     lrc: '',
-    audio: []
+    audio: [],
+    qualityoption: ''
   },
   mutations: {
     addSongtoPlaylist (state) {

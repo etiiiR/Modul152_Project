@@ -1,6 +1,6 @@
 <template>
 <div>
-<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
   <el-submenu index="2">
     <template slot="title">Workspace</template>
     <el-menu-item index="2-1">item one</el-menu-item>
@@ -14,6 +14,9 @@
     </el-submenu>
   </el-submenu>
   <el-menu-item index="4" >Account</el-menu-item>
+  <el-radio v-model="radio" label="0">High</el-radio>
+  <el-radio v-model="radio" label="1">Low</el-radio>
+  <el-radio v-model="radio" label="2">Mid</el-radio>
   <el-autocomplete
   v-model="state4"
   :fetch-suggestions="querySearchAsync"
@@ -36,7 +39,8 @@
         activeIndex2: '1',
         links: [],
         state4: '',
-        timeout: 5
+        timeout: 5,
+        radio: '0'
       }
     },
     methods: {
@@ -94,13 +98,28 @@
       this.links = this.loadAll()
     },
     addPlaylist (key, title, genere, image, upload, lyrcis, upload128, upload192) {
+      this.$store.state.qualityoption = this.radio
       this.$store.state.name = title
       this.$store.state.artist = genere
-      this.$store.state.url = upload
+      if (this.$store.state.qualityoption === 0) {
+        this.$store.state.url = upload
+      } else if (this.$store.state.qualityoption === 1) {
+        this.$store.state.url = upload192
+      } else if (this.$store.state.qualityoption === 2) {
+        this.$store.state.url = upload128
+      } else {
+        console.log('audio quality konnte nicht geladen werden')
+      }
       this.$store.state.cover = image
       this.$store.state.lrc = lyrcis
       this.$store.commit('addSongtoPlaylist')
       console.log(this.$store.state.audio)
+    },
+    updated () {
+      this.$store.state.qualityoption = this.radio
+    },
+    created () {
+      this.$store.state.qualityoption = this.radio
     }
   }
 </script>

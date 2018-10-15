@@ -1,19 +1,26 @@
 <template>
   <el-carousel :interval="4000" type="card" height="450px">
-    <el-carousel-item v-for="item in 6" :key="item">
-      <img v-bind:src="image" width="75%" />
+    <el-carousel-item v-for="bild in bilder" :key="bild">
+      <img v-bind:src="bild.image" width="75%" />
     </el-carousel-item>
   </el-carousel>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data () {
     return {
-      image: '../../media/image/2018/08/25/dj-khaleds-im-the-one-music-video-features-justin-bieber-lil-wayne-chan_jBLNSlb.jpg'
+      bilder: []
     }
   },
-  methods: {}
+  methods: {},
+  created () {
+    axios.get('http://localhost:8001/musics')
+    .then((response) => {
+      this.bilder = response.data
+    })
+  }
 }
 </script>
 
