@@ -4,7 +4,7 @@
      <el-form-item label="title">
     <el-input v-model="form.title"></el-input>
   </el-form-item>
-   <el-form-item label="genere">
+   <el-form-item label="artist">
     <el-input v-model="form.Genere"></el-input>
   </el-form-item>
   
@@ -42,6 +42,12 @@ export default {
     }
   },
   methods: {
+    open6() {
+      this.$notify.error({
+        title: 'Error',
+        message: 'filled not correctly the from, Upload faild try to fill up again'
+      });
+    },
     onFileChanged (event) {
       this.image = event.target.files[0]
     },
@@ -63,7 +69,18 @@ export default {
         { headers: {
           'Content-Type': 'multipart/form-data'
         }
-        }).then(this.image = null, this.upload = null, this.lyrics = null, this.form.title = null, this.form.Genere = null, this.$router.push({ path: '/created/' }))
+        })
+        .then(response => {
+          this.image = null
+          this.upload = null
+          this.lyrics = null
+          this.form.title = null
+          this.form.Genere = null
+          this.$router.push({ path: '/created/' })
+        })
+        .catch(error => {
+          this.open6()
+        })
     }
   }
 }

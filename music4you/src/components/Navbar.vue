@@ -15,8 +15,8 @@
   </el-submenu>
   <el-menu-item index="4" >Account</el-menu-item>
   <el-radio v-model="radio" label="0">High</el-radio>
-  <el-radio v-model="radio" label="1">Low</el-radio>
-  <el-radio v-model="radio" label="2">Mid</el-radio>
+  <el-radio v-model="radio" label="1">Mid</el-radio>
+  <el-radio v-model="radio" label="2">Low</el-radio>
   <el-autocomplete
   v-model="state4"
   :fetch-suggestions="querySearchAsync"
