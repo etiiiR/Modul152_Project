@@ -38,7 +38,7 @@
         </el-menu-item>
         </router-link>
 
-        <router-link tag="none" to="/settings" >
+        <router-link tag="none" to="" >
         <el-menu-item index="6">
             <i class="el-icon-setting"></i>
             <span slot="title">Settings</span>

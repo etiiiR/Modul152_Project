@@ -14,6 +14,12 @@
         <navbar></navbar>
       </el-header>
       <el-main>
+        <fab v-if="$mq === 'mobile'" :actions="fabActions"
+       @cache="cache"
+       @alertMe="alert"
+      ></fab>
+         <p id="notss" v-if="$mq === 'tablet'" style="margin-top: 80px"></p>
+        <p id="nots" v-if="$mq === 'mobile'" style="margin-top: 100px"></p>
         <router-view/>
       </el-main>
     </el-container>
@@ -28,12 +34,15 @@
 
 
 <script>
+// component imports globaly
 import Navbar from './components/Navbar.vue'
 import Sidebar from './components/Sidebar.vue'
 import Footers from './components/Footers.vue'
 import MusicPlayer from './components/MusicPlayer.vue'
 import Login from './components/Login.vue'
+import fab from 'vue-fab'
 
+// components using
 export default {
   name: 'app',
   components: {
@@ -41,7 +50,35 @@ export default {
     'sidebar': Sidebar,
     'footers': Footers,
     'musicplayer': MusicPlayer,
-    'login': Login
+    'login': Login,
+    fab
+  },
+  data () {
+    // fab data
+    return {
+      bgColor: '#778899',
+      position: 'top-right',
+      fabActions: [
+        {
+          name: 'cache',
+          icon: 'cached'
+        },
+        {
+          name: 'alertMe',
+          icon: 'add_alert'
+        }
+      ]
+    }
+  },
+  methods: {
+    // fab methods
+    cache () {
+      alert('Dieses Feature ist noch nicht implementiert bitte nur auf den unteren Button clicken um auf den Home screen zu laden')
+    },
+    alert () {
+      alert('alert')
+      this.$router.push({ path: '/' })
+    }
   }
 }
 </script>
@@ -155,7 +192,9 @@ export default {
   border-radius: 20px;
 }
 
-
+.fab-main {
+  margin-bottom: 80px;
+}
 
 
 </style>

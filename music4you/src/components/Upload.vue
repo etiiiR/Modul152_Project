@@ -42,21 +42,26 @@ export default {
     }
   },
   methods: {
+    // Open 6 --> for fail by uncorrectly form.
     open6() {
       this.$notify.error({
         title: 'Error',
         message: 'filled not correctly the from, Upload faild try to fill up again'
       });
     },
+    // if the first filefiled is changed
     onFileChanged (event) {
       this.image = event.target.files[0]
     },
+    // if the second filefiled is changed
     onFileChanged1 (event) {
       this.upload = event.target.files[0]
     },
+    // if the thrid filefiled is changed
     onFileChanged2 (event) {
       this.lyrics = event.target.files[0]
     },
+    // if submit the data via axios post
     onSubmit () {
       const formData = new FormData()
       formData.append('title', this.form.title)
@@ -69,7 +74,7 @@ export default {
         { headers: {
           'Content-Type': 'multipart/form-data'
         }
-        })
+        })// clears the data and do a router push for the new route --> landing on created
         .then(response => {
           this.image = null
           this.upload = null
@@ -102,9 +107,9 @@ export default {
 @media only screen and (max-width: 600px) {
     .form_song {
       max-width: 3000px;
-  padding-top: 40%;
-  padding-left: 0%;
-  padding-right: 0%;
+      padding-left: 0%;
+      padding-right: 0%;
+      padding-top: 0%;
     }
   
 .el-form-item {

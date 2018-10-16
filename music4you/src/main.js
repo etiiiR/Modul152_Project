@@ -30,7 +30,7 @@ Vue.use(VueMq, {
   breakpoints: {
     not: 222,
     mobile: 600,
-    tablet: 800,
+    tablet: 709,
     laptop: 1250,
     desktop: Infinity
   }

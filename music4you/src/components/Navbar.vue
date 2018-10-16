@@ -29,6 +29,7 @@
 
 
 <script>
+// Imports
   import axios from 'axios'
   export default {
     data () {
@@ -75,6 +76,7 @@
         console.log(this.$store.state.audio)
       }
     },
+    // before mount constrouctor populate the search data
     beforeMount () {
       axios.get('http://localhost:8001/musics')
         .then((response) => {
@@ -97,6 +99,8 @@
     mounted () {
       this.links = this.loadAll()
     },
+    // And a song to a playlist
+    // acutally the same as your songs but now with the search
     addPlaylist (key, title, genere, image, upload, lyrcis, upload128, upload192) {
       this.$store.state.qualityoption = this.radio
       this.$store.state.name = title

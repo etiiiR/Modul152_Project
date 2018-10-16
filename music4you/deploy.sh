@@ -18,6 +18,6 @@ echo 'Run migrations'
 python manage.py migrate
 echo 'Done...'
 
-export PORT=8000
+export PORT=8001
 echo 'Server runnning on port ' $PORT
 python manage.py runserver

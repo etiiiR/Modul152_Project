@@ -7,6 +7,7 @@
 </template>
 
 <script>
+// only axios get and show the image in the carousell
 import axios from 'axios'
 export default {
   data () {

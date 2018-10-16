@@ -99,6 +99,7 @@ export default {
     }
   },
   methods: {
+    // Adds a Playlist to the actual musicplayer with the right quality option
     addPlaylist (key, title, genere, image, upload, lyrcis, upload128, upload192) {
       this.$store.state.name = title
       this.$store.state.artist = genere
@@ -116,6 +117,7 @@ export default {
       this.$store.commit('addSongtoPlaylist')
     }
   },
+  // Axios request for the music data
   created () {
     axios.get('http://localhost:8001/musics')
     .then((response) => {

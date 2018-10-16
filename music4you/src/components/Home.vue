@@ -1,38 +1,44 @@
 <template>
   
   <div class="hello">
-    <h1>Welcome on Music4You</h1>
-    <el-button type="primary" icon="el-icon-edit"></el-button>
-    <el-button type="primary" icon="el-icon-share"></el-button>
-    <el-button type="primary" icon="el-icon-delete"></el-button>
-    <el-button type="primary" icon="el-icon-search">Search</el-button>
-    <el-button type="primary">Upload<i class="el-icon-upload el-icon-right"></i></el-button>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <h1>{{ msg }}</h1>
-    <router-link tag="li" to="/Kuenstler/">
-  <a>Helloosdkfslkdfklsdjklfj</a>
-</router-link>
+    <h1 v-if="$mq !== 'mobile'" style="line-height: 2px;">Welcome on Music4You on the {{ $mq }} version</h1>
+    <el-row :gutter="20">
+    <el-col  :span="this.span"><div class="grid-content bg-purple">
+      <el-card class="box-card">
+        <div class="text item">
+          Songs
+        </div>
+    </el-card>
+    </div></el-col>
+    <el-col :span="this.span"><div class="grid-content bg-purple">
+    <el-card class="box-card">
+        <div class="text item">
+          Login
+        </div>
+    </el-card>
+    </div></el-col>
+    <el-col :span="this.span"><div class="grid-content bg-purple">
+    <el-card class="box-card">
+        <div class="text item">
+          Login
+        </div>
+    </el-card>
+    </div></el-col>
+    <el-col :span="this.span"><div class="grid-content bg-purple">
+    <el-card class="box-card">
+        <div class="text item">
+          Upload
+        </div>
+    </el-card>
+    </div></el-col>
+    <el-col :span="this.span"><div class="grid-content bg-purple">
+    <el-card class="box-card">
+        <div class="text item">
+          Login
+        </div>
+    </el-card>
+    </div></el-col>
+    </el-row>
     <div class="el-scrollbar__bar is-horizontal"><div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div></div>
   </div>
 </template>
@@ -45,9 +51,29 @@ export default {
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
+      span: 6,
       msg: 'Enjoy'
     }
-  }
+  },
+  mounted () {
+    if (this.$mq === 'mobile') {
+      this.span = 12
+    } else if (this.$mq === 'tablet') {
+      this.span = 8
+    } else {
+      this.span = 6
+    }
+  },
+  updated () {
+    if (this.$mq === 'mobile') {
+      this.span = 12
+    } else if (this.$mq === 'tablet') {
+      this.span = 8
+    } else {
+      this.span = 6
+    }
+  },
+  methods: {}
 }
 </script>
 
@@ -61,6 +87,9 @@ h1 {
       text-align: center;
 }
 
+.el-card {
+  margin-top: 20px; 
+}
 
 
 </style>
