@@ -53,7 +53,5 @@
 
 <style>
 
-.el-form {
-}
 </style>
 

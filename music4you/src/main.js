@@ -17,7 +17,7 @@ Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 
 Vue.use(APlayer, {
-  defaultCover: 'https://github.com/u3u.png', // set the default cover
+  defaultCover: '../media/placeholder.png', // set the default cover
   productionTip: false, // disable console output
   fixedoptional: true,
   listFolded: true,

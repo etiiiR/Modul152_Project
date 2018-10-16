@@ -93,14 +93,13 @@ export default {
       // its initial state.
       data: [],
       name: '',
-      url: 'hello',
-      msg: 'Enjoy',
+      url: '',
+      msg: '',
       currentDate: '2018-10-09'
     }
   },
   methods: {
     addPlaylist (key, title, genere, image, upload, lyrcis, upload128, upload192) {
-      alert(this.$store.state.qualityoption)
       this.$store.state.name = title
       this.$store.state.artist = genere
       if (this.$store.state.qualityoption == 0) {

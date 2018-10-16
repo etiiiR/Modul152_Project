@@ -24,16 +24,6 @@ class CreateView(generics.ListCreateAPIView):
         """Save the post data when creating a new bucketlist."""
         #print(serializer.validated_data['upload'])
         before_save = serializer.save()
-        print(before_save)
-        print(                             )
-        print(             )
-        print(             )
-        print(             )
-        print(             )
-        print(             )
-        print(             )
-        print(serializer.data['id'])
-        print(serializer.data['upload'].strip('http://localhost:8001/'))
         song_to_sample = serializer.data['upload'].strip('http://localhost:8001/')
         song = AudioSegment.from_mp3(song_to_sample)
         export_song_name = serializer.data['upload'].strip('http://localhost:8001/media/mp3/320/')
@@ -45,14 +35,11 @@ class CreateView(generics.ListCreateAPIView):
         if not os.path.exists(paths):
             os.makedirs(paths)
         hello = song.export("/app/media/mp3/128/" + export_song_name + "mp3" , format="mp3", bitrate="128k")
-        print(Music.objects.all)
         number_of_id = serializer.data['id']
         p = Music.objects.get(pk=number_of_id)
         p.upload_128 = 'mp3/128/' + export_song_name + "mp3"
         p.upload_192 = 'mp3/192/' + export_song_name + "mp3"
-        print(p)
         p.save()
-        print(p)
         headers = {"Content-Type" : "application/json"}
         url = 'http://localhost:8001/number_of_id/delete/'
         r = requests.delete(url, headers=headers)
