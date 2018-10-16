@@ -5,41 +5,40 @@
     <el-row :gutter="20">
     <el-col  :span="this.span"><div class="grid-content bg-purple">
       <el-card class="box-card">
-        <div class="text item">
+        <div @click="songs" class="text item">
           Songs
         </div>
     </el-card>
     </div></el-col>
     <el-col :span="this.span"><div class="grid-content bg-purple">
     <el-card class="box-card">
-        <div class="text item">
+        <div  @click="login" class="text item">
           Login
         </div>
     </el-card>
     </div></el-col>
     <el-col :span="this.span"><div class="grid-content bg-purple">
     <el-card class="box-card">
-        <div class="text item">
+        <div @click="login"  class="text item">
           Login
         </div>
     </el-card>
     </div></el-col>
     <el-col :span="this.span"><div class="grid-content bg-purple">
     <el-card class="box-card">
-        <div class="text item">
+        <div @click="upload" class="text item">
           Upload
         </div>
     </el-card>
     </div></el-col>
     <el-col :span="this.span"><div class="grid-content bg-purple">
     <el-card class="box-card">
-        <div class="text item">
-          Login
+        <div @click="settings" class="text item">
+          Settings
         </div>
     </el-card>
     </div></el-col>
     </el-row>
-    <div class="el-scrollbar__bar is-horizontal"><div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div></div>
   </div>
 </template>
 
@@ -73,7 +72,17 @@ export default {
       this.span = 6
     }
   },
-  methods: {}
+  methods: {
+    songs () {
+      this.$router.push({ path: '/yourSongs/' })
+    },
+    login () {
+      this.$router.push({ path: '/login/' })
+    },
+    upload () {
+      this.$router.push({ path: '/uploade/' })
+    }
+  }
 }
 </script>
 
