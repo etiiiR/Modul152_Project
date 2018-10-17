@@ -10,7 +10,7 @@
         <div class="bottom clearfix">
           <time class="time" style="float: left">{{ item.date_created }}</time>
           <p style="font-size: 2px">URL</p>
-          <el-button @click="addPlaylist(item.id, item.title, item.Genere, item.image, item.upload, item.lyrics, item.upload_128, item.upload_192)" v-bind="url='mellos'" style="float: right" round>Add to Playlist</el-button>
+          <el-button @click="addPlaylist(item.id, item.title, item.Genere, item.image, item.upload, item.lyrics, item.upload_128, item.upload_192)" v-bind="url='mellos'" style="float: right" round>{{ addbttn }}</el-button>
         </div>
       </div>
     </el-card>
@@ -31,7 +31,28 @@
         <div class="bottom clearfix">
           <time class="time" style="float: left">{{ item.date_created }}</time>
           <p style="font-size: 2px">URL</p>
-          <el-button @click="addPlaylist(item.id, item.title, item.Genere, item.image, item.upload, item.lyrics, item.upload_128, item.upload_192)" v-bind="url='mellos'" style="float: right" round>Add to Playlist</el-button>
+          <el-button @click="addPlaylist(item.id, item.title, item.Genere, item.image, item.upload, item.lyrics, item.upload_128, item.upload_192)" v-bind="url='mellos'" style="float: right" round>{{ addbttn='Add Song' }}</el-button>
+        </div>
+      </div>
+    </el-card>
+    <p></p>
+  </el-col>
+</el-row>
+  </div>
+
+  <div id="songsyour" v-if="$mq === 'tablet'">
+  <p></p>
+  <p></p>
+  <el-row>
+  <el-col :span="7" v-for="item in data" :key="item" :offset="index > 0 ? 1 : 1">
+    <el-card :body-style="{ padding: '0px' }">
+      <img v-bind:src="item.image" class="image">
+      <div style="padding: 14px;">
+        <span>{{ item.title }}</span>
+        <div class="bottom clearfix">
+          <time class="time" style="float: left">{{ item.date_created }}</time>
+          <p style="font-size: 2px">URL</p>
+          <el-button @click="addPlaylist(item.id, item.title, item.Genere, item.image, item.upload, item.lyrics, item.upload_128, item.upload_192)" v-bind="url='mellos'" style="float: right" round>{{ addbttn='Add Song' }}</el-button>
         </div>
       </div>
     </el-card>
@@ -91,6 +112,7 @@ export default {
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
+      addbttn: 'add Song to Playlist',
       data: [],
       name: '',
       url: '',
