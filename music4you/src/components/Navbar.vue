@@ -66,14 +66,12 @@
         }
       },
       handleSelect (item) {
-        console.log(item)
         this.$store.state.name = item.title
         this.$store.state.artist = item.Genere
         this.$store.state.url = item.upload
         this.$store.state.cover = item.image
         this.$store.state.lrc = item.lyrcis
         this.$store.commit('addSongtoPlaylist')
-        console.log(this.$store.state.audio)
       }
     },
     // before mount constrouctor populate the search data
@@ -81,14 +79,11 @@
       axios.get('http://localhost:8001/musics')
         .then((response) => {
           this.datama = response.data
-          console.log(this.datama)
           let searchvalues = []
           this.datama.forEach(function (element) {
-            console.log(element)
             let b = {
               'value': element.title, 'link': element.id, 'id': element.id, 'title': element.title, 'Genere': element.Genere, 'image': element.image, 'lyrcis': element.lyrcis, 'upload': element.upload, 'upload128': element.upload128, 'upload192': element.upload192
             }
-            console.log(b)
             searchvalues.push(b)
           })
           this.searchvalues = searchvalues

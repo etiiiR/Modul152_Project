@@ -10,10 +10,12 @@ import APlayer from '@moefe/vue-aplayer'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Vuex from 'vuex'
+import Animated from 'animate.css'
 
 Vue.use(ElementUI)
 Vue.use(Vuex)
 Vue.use(VueAxios, axios)
+Vue.use(Animated)
 Vue.config.productionTip = false
 
 Vue.use(APlayer, {

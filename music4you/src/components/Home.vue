@@ -81,6 +81,9 @@ export default {
     },
     upload () {
       this.$router.push({ path: '/uploade/' })
+    },
+    settings () {
+      this.$router.push({ path: '/' })
     }
   }
 }
