@@ -7,6 +7,7 @@ Package: Python 3.7
          Docker
          
 Docker command : docker build -t music4you .
+
 docker run -p 8001:8001 music4you
 
 # vue-django-webpack-boilerplate
