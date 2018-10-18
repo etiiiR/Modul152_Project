@@ -6,9 +6,14 @@ Package: Python 3.7
          Vue.js 2.12
          Docker
          
-Docker command : docker build -t music4you .
+Docker command : 
 
+```docker
+build -t music4you .
+```
+```docker
 docker run -p 8001:8001 music4you
+```
 
 # vue-django-webpack-boilerplate
 
