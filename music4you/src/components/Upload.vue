@@ -8,14 +8,14 @@
     <el-input v-model="form.Genere"></el-input>
   </el-form-item>
   
-  <el-form-item>
-  <input type="file" @change="onFileChanged">
+  <el-form-item>Cover
+  <input type="file" @change="onFileChanged"> (png oder jpg)
   </el-form-item>
-  <el-form-item>
+  <el-form-item>Music Datei (Mp3)
   <input type="file" @change="onFileChanged1">
   (Uploads müssen in 320 kbit erfolgen...)
   </el-form-item>
-  <el-form-item>
+  <el-form-item>Lyrics (.lrc)
   <input type="file" @change="onFileChanged2">
   </el-form-item>
 
