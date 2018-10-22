@@ -20,6 +20,7 @@
 </template>
 
 <script>
+// Login is not implemented at the time.
   export default {
     data () {
       return {

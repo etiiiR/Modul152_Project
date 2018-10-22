@@ -91,6 +91,7 @@ li a {
 export default {
   data () {
     return {
+    // only hardcoded Image for the sidebar.
       isCollapse: true,
       img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/ITunes_12.2_logo.png/600px-ITunes_12.2_logo.png'
     }

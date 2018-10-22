@@ -7,7 +7,9 @@ from .validators import validate_file_size
 
 # Create your models here.
 class Music(models.Model):
-    """This class represents the bucketlist model."""
+    """This class represents the bucketlist model.
+        The title of the Model is as it named self explaining
+    """
     title = models.CharField(max_length=255, blank=False, unique=False)
     Genere = models.CharField(max_length=255, blank=False, unique=False)
     image = models.ImageField(upload_to='./image/%Y/%m/%d/', default='/app/media/placeholder.png', validators=[FileExtensionValidator(allowed_extensions=['jpg', 'png']), validate_file_size])
